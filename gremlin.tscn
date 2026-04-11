@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dbes1d86qkrwm"]
+
+[ext_resource type="Texture2D" uid="uid://d4fyi2mcu87ku" path="res://Enemies/Gremlin/idle/chort_idle_anim_f0.png" id="1_b7f3m"]
+[ext_resource type="Script" uid="uid://dhl570gxxq3ly" path="res://Enemies/Scripts/enemy.gd" id="1_qvpyi"]
+[ext_resource type="Texture2D" uid="uid://b3ym42y7ohj6n" path="res://Enemies/Gremlin/idle/chort_idle_anim_f1.png" id="2_qvpyi"]
+[ext_resource type="Texture2D" uid="uid://gv1rr1hqta8l" path="res://Enemies/Gremlin/idle/chort_idle_anim_f2.png" id="3_olabb"]
+[ext_resource type="Texture2D" uid="uid://btoxl144boi1t" path="res://Enemies/Gremlin/idle/chort_idle_anim_f3.png" id="4_pnlr6"]
+[ext_resource type="Texture2D" uid="uid://drq18boli8c2b" path="res://Enemies/Gremlin/run/chort_run_anim_f0.png" id="5_rcalc"]
+[ext_resource type="Texture2D" uid="uid://bi7mo8hacqqhd" path="res://Enemies/Gremlin/run/chort_run_anim_f1.png" id="6_sxqlc"]
+[ext_resource type="Texture2D" uid="uid://0hucx5jb70tn" path="res://Enemies/Gremlin/run/chort_run_anim_f2.png" id="7_gnwh7"]
+[ext_resource type="Texture2D" uid="uid://ckyw4k3hircxx" path="res://Enemies/Gremlin/run/chort_run_anim_f3.png" id="8_04hfm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1svj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b7f3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qvpyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_olabb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pnlr6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rcalc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sxqlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gnwh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_04hfm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7f3m"]
+size = Vector2(12, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b7f3m"]
+radius = 100.0
+
+[node name="Gremlin" type="CharacterBody2D" unique_id=1867772638]
+script = ExtResource("1_qvpyi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1028248647]
+sprite_frames = SubResource("SpriteFrames_1svj4")
+animation = &"run"
+frame_progress = 0.19765499
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774839718]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_b7f3m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1749380307]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=7402165]
+shape = SubResource("CircleShape2D_b7f3m")
