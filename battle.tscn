@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dqs8v8i7d3b5i"]
+
+[ext_resource type="PackedScene" uid="uid://g28d3kcbei6n" path="res://floor-01.tscn" id="1_ip7xm"]
+
+[node name="Battle" type="Node2D" unique_id=1749783049]
+
+[node name="Layer0" parent="." unique_id=745772792 instance=ExtResource("1_ip7xm")]
