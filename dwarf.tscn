@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bypwsg7ojmrk4"]
+
+[ext_resource type="Texture2D" uid="uid://2ag8yl3ptlsv" path="res://Characters/Dwarf/dwarf_m_hit_anim_f0.png" id="1_30s2a"]
+[ext_resource type="Script" uid="uid://c3cmpk0yvpd56" path="res://Characters/Dwarf/dwarf.gd" id="1_g5jdp"]
+[ext_resource type="Texture2D" uid="uid://h2oxn42oelwa" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f0.png" id="2_30s2a"]
+[ext_resource type="Texture2D" uid="uid://ealkomccuqs4" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f1.png" id="3_g5jdp"]
+[ext_resource type="Texture2D" uid="uid://b8gp5sah6ol1" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f2.png" id="4_ki53n"]
+[ext_resource type="Texture2D" uid="uid://du8llbitpoxb3" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f3.png" id="5_4226k"]
+[ext_resource type="Texture2D" uid="uid://cyxyvw84ryo5u" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f0.png" id="6_30s2a"]
+[ext_resource type="Texture2D" uid="uid://docvjneqqeqf0" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f1.png" id="7_g5jdp"]
+[ext_resource type="Texture2D" uid="uid://bgvpvlx6h58qt" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f2.png" id="8_ki53n"]
+[ext_resource type="Texture2D" uid="uid://nhb8id1767yx" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f3.png" id="9_4226k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpev4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_30s2a")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_30s2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g5jdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ki53n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4226k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_30s2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g5jdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ki53n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4226k")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_837jh"]
+size = Vector2(14, 20)
+
+[node name="Dwarf" type="CharacterBody2D" unique_id=1955146273]
+script = ExtResource("1_g5jdp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1926212812]
+sprite_frames = SubResource("SpriteFrames_fpev4")
+animation = &"idle"
+offset = Vector2(-1, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486312305]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_837jh")

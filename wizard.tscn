@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://shp6hww5jncm"]
 
-[ext_resource type="Script" uid="uid://b7edweesyrpx8" path="res://Scripts/player.gd" id="1_20pe4"]
-[ext_resource type="Texture2D" uid="uid://j4yer1in0gb2" path="res://Wizard/wizzard_f_hit_anim_f0.png" id="1_bd25x"]
-[ext_resource type="Texture2D" uid="uid://cuh7ortmyhrkf" path="res://Wizard/idle/wizzard_f_idle_anim_f0.png" id="1_xo1iy"]
-[ext_resource type="Texture2D" uid="uid://tegvoep7smco" path="res://Wizard/idle/wizzard_f_idle_anim_f1.png" id="2_wsbrn"]
-[ext_resource type="Texture2D" uid="uid://dd0iek3obr2ao" path="res://Wizard/idle/wizzard_f_idle_anim_f2.png" id="3_rsvjg"]
-[ext_resource type="Texture2D" uid="uid://cntsv7af07b6n" path="res://Wizard/idle/wizzard_f_idle_anim_f3.png" id="4_74p71"]
-[ext_resource type="Texture2D" uid="uid://bh878xiqeeixa" path="res://Wizard/run/wizzard_f_run_anim_f0.png" id="5_2tmfn"]
-[ext_resource type="Texture2D" uid="uid://w1d6xopdwfnh" path="res://Wizard/run/wizzard_f_run_anim_f1.png" id="6_bd25x"]
-[ext_resource type="Texture2D" uid="uid://c8gom1eofqanu" path="res://Wizard/run/wizzard_f_run_anim_f2.png" id="7_20pe4"]
-[ext_resource type="Texture2D" uid="uid://dpdynuy87ephm" path="res://Wizard/run/wizzard_f_run_anim_f3.png" id="8_honri"]
+[ext_resource type="Script" uid="uid://jnshgocjawhh" path="res://Characters/Wizard/wizard.gd" id="1_20pe4"]
+[ext_resource type="Texture2D" uid="uid://j4yer1in0gb2" path="res://Characters/Wizard/wizzard_f_hit_anim_f0.png" id="1_bd25x"]
+[ext_resource type="Texture2D" uid="uid://cuh7ortmyhrkf" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f0.png" id="1_xo1iy"]
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="2_p5j14"]
+[ext_resource type="Texture2D" uid="uid://tegvoep7smco" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f1.png" id="2_wsbrn"]
+[ext_resource type="Resource" uid="uid://ipsc4fjr6kvm" path="res://Attacks/staff_lightAtk.tres" id="3_ddiug"]
+[ext_resource type="Texture2D" uid="uid://dd0iek3obr2ao" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f2.png" id="3_rsvjg"]
+[ext_resource type="Texture2D" uid="uid://cntsv7af07b6n" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f3.png" id="4_74p71"]
+[ext_resource type="Resource" uid="uid://mxyujub3xkq1" path="res://Attacks/staff_heavyAtk.tres" id="4_fpxa5"]
+[ext_resource type="Texture2D" uid="uid://bh878xiqeeixa" path="res://Characters/Wizard/run/wizzard_f_run_anim_f0.png" id="5_2tmfn"]
+[ext_resource type="Resource" uid="uid://c04ndifh6cdn1" path="res://Characters/Wizard/wizard_stats.tres" id="5_u8byd"]
+[ext_resource type="Texture2D" uid="uid://w1d6xopdwfnh" path="res://Characters/Wizard/run/wizzard_f_run_anim_f1.png" id="6_bd25x"]
+[ext_resource type="Texture2D" uid="uid://c8gom1eofqanu" path="res://Characters/Wizard/run/wizzard_f_run_anim_f2.png" id="7_20pe4"]
+[ext_resource type="Texture2D" uid="uid://dpdynuy87ephm" path="res://Characters/Wizard/run/wizzard_f_run_anim_f3.png" id="8_honri"]
+[ext_resource type="Texture2D" uid="uid://ctaljllnp584f" path="res://Weapons/weapon_red_magic_staff.png" id="11_honri"]
+[ext_resource type="Texture2D" uid="uid://d0e4hdrif3x8o" path="res://UI/health_bar.tres" id="15_fpxa5"]
+[ext_resource type="Texture2D" uid="uid://c43oj1rwvq4bn" path="res://UI/health_fill.tres" id="16_u8byd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2tmfn"]
 animations = [{
@@ -56,17 +63,171 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_7woc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_japat"]
+resource_name = "staff_heavy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2025056, 0.26666668, 0.5015645, 0.66903746),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 5), Vector2(6, -2), Vector2(6, -2), Vector2(6, 7), Vector2(6, 7), Vector2(-4, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_honri"]
+resource_name = "staff_light"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.26829857, 0.5, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 5), Vector2(1, 2), Vector2(1, 2), Vector2(1, 2), Vector2(-4, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.2674441, 0.5, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.317604, 0.317604, 0.317604, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nabqu"]
+resource_name = "sword_heavy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.67168504, 0.83683074),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 6), Vector2(7, 4), Vector2(7, 4), Vector2(-4, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.26666668, 0.4, 0.5218049, 0.83683074),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -2.5369213, -2.5369213, -6.876597252857659, -6.876597252857659, -6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_1o34j"]
+resource_name = "sword_light"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.502376, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 6), Vector2(7, 0.5), Vector2(7, 0.5), Vector2(-4, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.36666667, 0.50515157, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.42791614, -0.42791614, 3.7088246604879505, 3.7088246604879505, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_japat"]
+_data = {
+&"RESET": SubResource("Animation_7woc6"),
+&"staff_heavy": SubResource("Animation_japat"),
+&"staff_light": SubResource("Animation_honri"),
+&"sword_heavy": SubResource("Animation_nabqu"),
+&"sword_light": SubResource("Animation_1o34j")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f53g"]
 size = Vector2(15, 20)
 
 [node name="Wizard" type="CharacterBody2D" unique_id=1925965826]
 script = ExtResource("1_20pe4")
+attacks = Array[ExtResource("2_p5j14")]([ExtResource("3_ddiug"), ExtResource("4_fpxa5")])
+stats = ExtResource("5_u8byd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1316805176]
 sprite_frames = SubResource("SpriteFrames_2tmfn")
 animation = &"idle"
 offset = Vector2(0, -6)
 
+[node name="Weapon" type="Sprite2D" parent="." unique_id=2093185134]
+position = Vector2(-4, 5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_honri")
+offset = Vector2(0, -12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1397193017]
+libraries/ = SubResource("AnimationLibrary_japat")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1093239671]
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_6f53g")
+
+[node name="Health" type="TextureProgressBar" parent="." unique_id=63138251]
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 36.0
+offset_bottom = -9.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_under = ExtResource("15_fpxa5")
+texture_progress = ExtResource("16_u8byd")
+texture_progress_offset = Vector2(2, 2)

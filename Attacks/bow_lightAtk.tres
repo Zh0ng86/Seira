@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://dh30ferarxfg"]
+
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="1_7rpba"]
+
+[resource]
+script = ExtResource("1_7rpba")
+name = "bow_lightAtk"
+damage = 8
+animation_name = "bow_light"
+metadata/_custom_type_script = "uid://bqk3erxkqb6g4"

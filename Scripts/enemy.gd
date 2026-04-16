@@ -1,7 +1,10 @@
 class_name Enemy extends CharacterBody2D
 
+@export var stats : Battle_Stats
+
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var detectedArea : Area2D = $Area2D
+@onready var health_bar : TextureProgressBar = $Health
 
 var enemy_name : String = "enemy"
 var move_speed : float = 80
@@ -23,12 +26,18 @@ var idle_at_point_timer: float = 0.0
 var arrived: bool = false
 
 func _ready() -> void:
+	stats = stats.duplicate()
+	
 	noise.seed = randi()
 	noise.frequency = 0.1
 	pick_new_target()
 	detectedArea.body_entered.connect(_on_detection_area_body_entered)
 	detectedArea.body_exited.connect(_on_detection_area_body_exited)
 	animated_sprite.play("idle")
+	
+	health_bar.max_value = stats.max_hp
+	health_bar.value = stats.hp
+	stats.hp_changed.connect(_on_hp_changed)
 
 func _physics_process(delta: float) -> void:
 	var player_pos = GameManager.player_pos
@@ -123,4 +132,6 @@ func animator(delta: float) -> void:
 			animated_sprite.flip_h = true
 		elif velocity.x > 0: 
 			animated_sprite.flip_h = false
-	
+
+func _on_hp_changed(new_hp: float) -> void:
+	health_bar.value = new_hp

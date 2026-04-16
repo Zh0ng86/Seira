@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://cojfjn0etefkd"]
+
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="1_7t54g"]
+
+[resource]
+script = ExtResource("1_7t54g")
+name = "bow_heavyAtk"
+damage = 15
+accuracy = 0.7
+animation_name = "bow_heavy"
+metadata/_custom_type_script = "uid://bqk3erxkqb6g4"

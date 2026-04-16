@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Battle_Stats" format=3 uid="uid://djposa5pd642k"]
+
+[ext_resource type="Script" uid="uid://ik5djf20v0iu" path="res://Scripts/battle_stats.gd" id="1_ewdyf"]
+
+[resource]
+script = ExtResource("1_ewdyf")
+char_name = "Knight"
+defense = 8
+metadata/_custom_type_script = "uid://ik5djf20v0iu"

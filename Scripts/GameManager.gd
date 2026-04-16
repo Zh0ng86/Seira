@@ -5,11 +5,13 @@ var player_pos : Vector2 = Vector2.ZERO
 var _overlay : ColorRect
 var _canvas : CanvasLayer
 var can_move : bool = true
-var battle_enemy : String = ""
+
 
 # Combat
 var party : Array = []
 var active_index : int = 0
+var battle_enemy : String = ""
+signal arrow_released
 
 func ready_seeder(): 
 	var char1 = Battle_Stats.new()
@@ -17,9 +19,12 @@ func ready_seeder():
 	party.append(char1)
 	var char2 = Battle_Stats.new()
 	char2.char_name = "Wizard"
-	char2.max_mp = 50
-	char2.max_mp = 50
+	char2.defense = 2
 	party.append(char2)
+	var char3 = Battle_Stats.new()
+	char3.char_name = "Elf"
+	char3.speed = 20
+	party.append(char3)
 
 func _ready() -> void: 
 	ready_seeder()

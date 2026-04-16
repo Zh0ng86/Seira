@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://cfm684hjr4fgg"]
+
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="1_q238h"]
+
+[resource]
+script = ExtResource("1_q238h")
+name = "sword_lightAtk"
+damage = 10
+accuracy = 0.7
+animation_name = "sword_light"
+metadata/_custom_type_script = "uid://bqk3erxkqb6g4"

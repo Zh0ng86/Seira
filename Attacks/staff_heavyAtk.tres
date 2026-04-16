@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://mxyujub3xkq1"]
+
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="1_83nl1"]
+
+[resource]
+script = ExtResource("1_83nl1")
+name = "staff_heavyAtk"
+damage = 20
+accuracy = 0.7
+animation_name = "staff_heavy"
+metadata/_custom_type_script = "uid://bqk3erxkqb6g4"
