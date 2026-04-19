@@ -9,4 +9,5 @@ max_hp = 80
 hp = 80
 attack = 15
 precision = 6
+speed = 5
 metadata/_custom_type_script = "uid://ik5djf20v0iu"

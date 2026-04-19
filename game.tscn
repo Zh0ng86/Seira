@@ -14,3 +14,7 @@ position = Vector2(143, -33)
 
 [node name="Knight" parent="." unique_id=1239633177 groups=["player"] instance=ExtResource("1_e2o6t")]
 position = Vector2(-86, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Knight" unique_id=198532071]
+zoom = Vector2(2, 2)
+limit_smoothed = true

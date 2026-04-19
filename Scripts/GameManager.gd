@@ -11,20 +11,14 @@ var can_move : bool = true
 var party : Array = []
 var active_index : int = 0
 var battle_enemy : String = ""
-signal arrow_released
+signal melee_fx()
+signal arrow_released(is_heavy: bool)
+signal spell_used(is_heavy: bool)
 
 func ready_seeder(): 
-	var char1 = Battle_Stats.new()
-	char1.char_name = "Knight"
-	party.append(char1)
-	var char2 = Battle_Stats.new()
-	char2.char_name = "Wizard"
-	char2.defense = 2
-	party.append(char2)
-	var char3 = Battle_Stats.new()
-	char3.char_name = "Elf"
-	char3.speed = 20
-	party.append(char3)
+	party.append("Knight")
+	party.append("Elf")
+	party.append("Wizard")
 
 func _ready() -> void: 
 	ready_seeder()

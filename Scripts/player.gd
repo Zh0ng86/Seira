@@ -38,6 +38,10 @@ func _physics_process(delta) -> void:
 	GameManager.player_pos = global_position
 
 func animator() -> void: 
+	if state == "hit": 
+		animated_sprite.play("hit")
+		return
+	
 	if velocity.length() > 0: 
 		animated_sprite.play('run')
 	else: 

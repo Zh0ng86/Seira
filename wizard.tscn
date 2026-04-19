@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dpdynuy87ephm" path="res://Characters/Wizard/run/wizzard_f_run_anim_f3.png" id="8_honri"]
 [ext_resource type="Texture2D" uid="uid://ctaljllnp584f" path="res://Weapons/weapon_red_magic_staff.png" id="11_honri"]
 [ext_resource type="Texture2D" uid="uid://d0e4hdrif3x8o" path="res://UI/health_bar.tres" id="15_fpxa5"]
+[ext_resource type="Script" uid="uid://dbx1hyb5ja7p8" path="res://Scripts/staff.gd" id="16_jlar0"]
 [ext_resource type="Texture2D" uid="uid://c43oj1rwvq4bn" path="res://UI/health_fill.tres" id="16_u8byd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2tmfn"]
@@ -23,8 +24,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_bd25x")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bd25x")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -104,6 +111,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-4, 5), Vector2(6, -2), Vector2(6, -2), Vector2(6, 7), Vector2(6, 7), Vector2(-4, 5)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.26666668),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"use_spell"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapon:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_honri"]
 resource_name = "staff_light"
@@ -130,6 +163,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.317604, 0.317604, 0.317604, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"use_spell"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_nabqu"]
@@ -213,6 +260,7 @@ position = Vector2(-4, 5)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("11_honri")
 offset = Vector2(0, -12)
+script = ExtResource("16_jlar0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1397193017]
 libraries/ = SubResource("AnimationLibrary_japat")

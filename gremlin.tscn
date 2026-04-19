@@ -17,6 +17,20 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_pnlr6")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pnlr6")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_b7f3m")
 }, {
 "duration": 1.0,
@@ -62,7 +76,7 @@ stats = ExtResource("2_rcalc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1028248647]
 sprite_frames = SubResource("SpriteFrames_1svj4")
-animation = &"idle"
+animation = &"hit"
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774839718]

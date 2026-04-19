@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://gdhv65eych7f"]
+
+[ext_resource type="Texture2D" uid="uid://blkfer20uyk4c" path="res://Weapons/lightning.png" id="1_cep6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_888k8"]
+atlas = ExtResource("1_cep6t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwoj2"]
+atlas = ExtResource("1_cep6t")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auma5"]
+atlas = ExtResource("1_cep6t")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m683h"]
+atlas = ExtResource("1_cep6t")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8xya"]
+atlas = ExtResource("1_cep6t")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp0ur"]
+atlas = ExtResource("1_cep6t")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuhhs"]
+atlas = ExtResource("1_cep6t")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5cnhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_888k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwoj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auma5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m683h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8xya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp0ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuhhs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1223407603]
+sprite_frames = SubResource("SpriteFrames_5cnhv")
+frame = 6
+frame_progress = 1.0
+offset = Vector2(0, -24)

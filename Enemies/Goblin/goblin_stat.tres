@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Battle_Stats" format=3 uid="uid://cu54d5ujkygq2"]
+
+[ext_resource type="Script" uid="uid://ik5djf20v0iu" path="res://Scripts/battle_stats.gd" id="1_qoef5"]
+
+[resource]
+script = ExtResource("1_qoef5")
+char_name = "gremlin"
+level = 2
+max_hp = 40
+hp = 40
+attack = 5
+defense = 2
+speed = 20
+metadata/_custom_type_script = "uid://ik5djf20v0iu"

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d0wolwkqspvn6" path="res://Characters/Knight/knight.gd" id="1_1o34j"]
 [ext_resource type="Texture2D" uid="uid://brfrsr2d1lr5x" path="res://Characters/Knight/idle/knight_m_idle_anim_f0.png" id="1_np0bx"]
-[ext_resource type="Texture2D" uid="uid://sk86fk6immee" path="res://Characters/Knight/knight_f_hit_anim_f0.png" id="2_1o34j"]
 [ext_resource type="Texture2D" uid="uid://cd7e5o11oskg4" path="res://Characters/Knight/idle/knight_m_idle_anim_f1.png" id="2_go3up"]
 [ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="2_ir7sf"]
 [ext_resource type="Resource" uid="uid://cfm684hjr4fgg" path="res://Attacks/sword_lightAtk.tres" id="3_2yhar"]
@@ -11,20 +10,28 @@
 [ext_resource type="Texture2D" uid="uid://bkupt8vpxomri" path="res://Characters/Knight/idle/knight_m_idle_anim_f3.png" id="4_o118k"]
 [ext_resource type="Resource" uid="uid://djposa5pd642k" path="res://Characters/Knight/knight_stats.tres" id="5_1hfkx"]
 [ext_resource type="Texture2D" uid="uid://b5omfxpil86yx" path="res://Characters/Knight/run/knight_m_run_anim_f0.png" id="5_hnm0a"]
+[ext_resource type="Texture2D" uid="uid://b5ndxr8ky2k7l" path="res://Characters/Knight/knight_m_hit_anim_f0.png" id="6_1hfkx"]
 [ext_resource type="Texture2D" uid="uid://cirhgj4h7nuv" path="res://Characters/Knight/run/knight_m_run_anim_f1.png" id="6_k3kcr"]
 [ext_resource type="Texture2D" uid="uid://b5awwbhs44t25" path="res://Characters/Knight/run/knight_m_run_anim_f2.png" id="7_1o34j"]
 [ext_resource type="Texture2D" uid="uid://bef5cioytxmab" path="res://Characters/Knight/run/knight_m_run_anim_f3.png" id="8_7woc6"]
 [ext_resource type="Texture2D" uid="uid://cg0fjmtcwew18" path="res://Weapons/weapon_knight_sword.png" id="12_nabqu"]
 [ext_resource type="Texture2D" uid="uid://d0e4hdrif3x8o" path="res://UI/health_bar.tres" id="15_6j7tr"]
 [ext_resource type="Texture2D" uid="uid://c43oj1rwvq4bn" path="res://UI/health_fill.tres" id="16_1hfkx"]
+[ext_resource type="Script" uid="uid://c18f2bo30qj75" path="res://Scripts/melee.gd" id="16_dbld7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hnm0a"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1o34j")
+"texture": ExtResource("6_1hfkx")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1hfkx")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -116,6 +123,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, -2.5369213, -2.5369213, -6.876597252857659, -6.876597252857659, -6.283185307179586]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.33333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_fx"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_1o34j"]
 resource_name = "sword_light"
@@ -169,6 +190,7 @@ position = Vector2(-4, 5)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_nabqu")
 offset = Vector2(0, -12)
+script = ExtResource("16_dbld7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1533235825]
 libraries/ = SubResource("AnimationLibrary_7woc6")

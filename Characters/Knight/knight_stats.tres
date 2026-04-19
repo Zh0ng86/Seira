@@ -6,4 +6,5 @@
 script = ExtResource("1_ewdyf")
 char_name = "Knight"
 defense = 8
+precision = 10
 metadata/_custom_type_script = "uid://ik5djf20v0iu"

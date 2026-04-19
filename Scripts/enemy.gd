@@ -24,6 +24,8 @@ var IDLE_AT_POINT_MIN: float = 0.5
 var IDLE_AT_POINT_MAX: float = 1.5
 var idle_at_point_timer: float = 0.0
 var arrived: bool = false
+var hit: bool = false
+
 
 func _ready() -> void:
 	stats = stats.duplicate()
@@ -35,6 +37,7 @@ func _ready() -> void:
 	detectedArea.body_exited.connect(_on_detection_area_body_exited)
 	animated_sprite.play("idle")
 	
+	health_bar.visible = false
 	health_bar.max_value = stats.max_hp
 	health_bar.value = stats.hp
 	stats.hp_changed.connect(_on_hp_changed)
@@ -116,22 +119,27 @@ func start_battle():
 func animator(delta: float) -> void:
 	smooth_speed = lerp(smooth_speed, velocity.length(), SMOOTH_FACTOR * delta)
 	
+	if !GameManager.can_move: 
+		animated_sprite.flip_h = true
+		if hit: 
+			animated_sprite.play("hit")
+		elif velocity <= Vector2.ZERO: 
+			animated_sprite.play("idle")
+		elif velocity > Vector2.ZERO: 
+			animated_sprite.play("run")
+	
 	if smooth_speed > MIN_SPEED:
 		if current_anim != "run":
 			animated_sprite.play("run")
 			current_anim = "run"
-	else:
-		if current_anim != "idle":
-			animated_sprite.play("idle")
-			current_anim = "idle"
-			
-	if !GameManager.can_move: 
-		animated_sprite.flip_h = true
-	elif smooth_speed > MIN_SPEED:
 		if velocity.x < 0 : 
 			animated_sprite.flip_h = true
 		elif velocity.x > 0: 
 			animated_sprite.flip_h = false
+	else:
+		if current_anim != "idle":
+			animated_sprite.play("idle")
+			current_anim = "idle"
 
 func _on_hp_changed(new_hp: float) -> void:
 	health_bar.value = new_hp

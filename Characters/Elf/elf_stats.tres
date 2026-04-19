@@ -7,6 +7,6 @@ script = ExtResource("1_hxa00")
 char_name = "Elf"
 max_hp = 80
 hp = 80
-precision = 8
+precision = 20
 speed = 12
 metadata/_custom_type_script = "uid://ik5djf20v0iu"

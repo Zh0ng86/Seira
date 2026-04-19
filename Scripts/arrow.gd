@@ -2,7 +2,7 @@ class_name Arrow extends Area2D
 
 var released: bool = false
 var direction: Vector2
-var speed: float = 500.0
+var speed: float = 750
 
 func _ready(): 
 	body_entered.connect(_on_body_entered)
