@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bihl0q8je0d0f"]
+
+[ext_resource type="Texture2D" uid="uid://h2oxn42oelwa" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f0.png" id="1_jkmye"]
+
+[resource]
+atlas = ExtResource("1_jkmye")
+region = Rect2(2, 10, 14, 14)

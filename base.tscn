@@ -1,0 +1,317 @@
+[gd_scene format=4 uid="uid://cx3mclpojs7ye"]
+
+[ext_resource type="PackedScene" uid="uid://g28d3kcbei6n" path="res://floor-01.tscn" id="1_3vi8l"]
+[ext_resource type="PackedScene" uid="uid://dtwxtvq1djfqg" path="res://wall-02.tscn" id="2_8rhti"]
+[ext_resource type="PackedScene" uid="uid://tnb3d1lwjle0" path="res://wall-01.tscn" id="3_8rhti"]
+[ext_resource type="Texture2D" uid="uid://b5ndxr8ky2k7l" path="res://Characters/Knight/knight_m_hit_anim_f0.png" id="4_ytyno"]
+[ext_resource type="Texture2D" uid="uid://brfrsr2d1lr5x" path="res://Characters/Knight/idle/knight_m_idle_anim_f0.png" id="5_k3d1t"]
+[ext_resource type="Texture2D" uid="uid://cd7e5o11oskg4" path="res://Characters/Knight/idle/knight_m_idle_anim_f1.png" id="6_sgv64"]
+[ext_resource type="Texture2D" uid="uid://c3cc7xb5npj1d" path="res://Characters/Knight/idle/knight_m_idle_anim_f2.png" id="7_gaoim"]
+[ext_resource type="Texture2D" uid="uid://bkupt8vpxomri" path="res://Characters/Knight/idle/knight_m_idle_anim_f3.png" id="8_n73o2"]
+[ext_resource type="Texture2D" uid="uid://b5omfxpil86yx" path="res://Characters/Knight/run/knight_m_run_anim_f0.png" id="9_cs1hs"]
+[ext_resource type="Texture2D" uid="uid://cirhgj4h7nuv" path="res://Characters/Knight/run/knight_m_run_anim_f1.png" id="10_v7taj"]
+[ext_resource type="Texture2D" uid="uid://b5awwbhs44t25" path="res://Characters/Knight/run/knight_m_run_anim_f2.png" id="11_jym3p"]
+[ext_resource type="Texture2D" uid="uid://bef5cioytxmab" path="res://Characters/Knight/run/knight_m_run_anim_f3.png" id="12_50rgw"]
+[ext_resource type="Texture2D" uid="uid://j4yer1in0gb2" path="res://Characters/Wizard/wizzard_f_hit_anim_f0.png" id="13_4a7sh"]
+[ext_resource type="Texture2D" uid="uid://cuh7ortmyhrkf" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f0.png" id="14_1uwki"]
+[ext_resource type="Texture2D" uid="uid://tegvoep7smco" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f1.png" id="15_wudxj"]
+[ext_resource type="Texture2D" uid="uid://dd0iek3obr2ao" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f2.png" id="16_yc71e"]
+[ext_resource type="Texture2D" uid="uid://cntsv7af07b6n" path="res://Characters/Wizard/idle/wizzard_f_idle_anim_f3.png" id="17_2btif"]
+[ext_resource type="Texture2D" uid="uid://bh878xiqeeixa" path="res://Characters/Wizard/run/wizzard_f_run_anim_f0.png" id="18_n0uqe"]
+[ext_resource type="Texture2D" uid="uid://w1d6xopdwfnh" path="res://Characters/Wizard/run/wizzard_f_run_anim_f1.png" id="19_7m1qc"]
+[ext_resource type="Texture2D" uid="uid://c8gom1eofqanu" path="res://Characters/Wizard/run/wizzard_f_run_anim_f2.png" id="20_mh4ky"]
+[ext_resource type="Texture2D" uid="uid://dpdynuy87ephm" path="res://Characters/Wizard/run/wizzard_f_run_anim_f3.png" id="21_x13uo"]
+[ext_resource type="Texture2D" uid="uid://g25a7hmsdqo3" path="res://Characters/Elf/elf_f_hit_anim_f0.png" id="22_3vupj"]
+[ext_resource type="Texture2D" uid="uid://ipg0wdc8kui4" path="res://Characters/Elf/idle/elf_f_idle_anim_f0.png" id="23_2bbbl"]
+[ext_resource type="Texture2D" uid="uid://dtiucu1hkokdt" path="res://Characters/Elf/idle/elf_f_idle_anim_f1.png" id="24_d5d72"]
+[ext_resource type="Texture2D" uid="uid://bcrxnhtj21b8u" path="res://Characters/Elf/idle/elf_f_idle_anim_f2.png" id="25_18b1w"]
+[ext_resource type="Texture2D" uid="uid://cyq7nkdf8t6o3" path="res://Characters/Elf/idle/elf_f_idle_anim_f3.png" id="26_aggb6"]
+[ext_resource type="Texture2D" uid="uid://4oqjvwhhb3dh" path="res://Characters/Elf/run/elf_f_run_anim_f0.png" id="27_f7hpq"]
+[ext_resource type="Texture2D" uid="uid://sgryrltkp88i" path="res://Characters/Elf/run/elf_f_run_anim_f1.png" id="28_0xwag"]
+[ext_resource type="Texture2D" uid="uid://c0l3wrjjys6cw" path="res://Characters/Elf/run/elf_f_run_anim_f2.png" id="29_uvlxr"]
+[ext_resource type="Texture2D" uid="uid://ditrds2q1cstw" path="res://Characters/Elf/run/elf_f_run_anim_f3.png" id="30_kaldw"]
+[ext_resource type="Texture2D" uid="uid://2ag8yl3ptlsv" path="res://Characters/Dwarf/dwarf_m_hit_anim_f0.png" id="31_1dlgw"]
+[ext_resource type="Texture2D" uid="uid://h2oxn42oelwa" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f0.png" id="32_dtkpj"]
+[ext_resource type="Texture2D" uid="uid://ealkomccuqs4" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f1.png" id="33_5pcrg"]
+[ext_resource type="Texture2D" uid="uid://b8gp5sah6ol1" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f2.png" id="34_fe1od"]
+[ext_resource type="Texture2D" uid="uid://du8llbitpoxb3" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f3.png" id="35_fq8n2"]
+[ext_resource type="Texture2D" uid="uid://cyxyvw84ryo5u" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f0.png" id="36_ipkxx"]
+[ext_resource type="Texture2D" uid="uid://docvjneqqeqf0" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f1.png" id="37_vjpxa"]
+[ext_resource type="Texture2D" uid="uid://bgvpvlx6h58qt" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f2.png" id="38_u7ijn"]
+[ext_resource type="Texture2D" uid="uid://nhb8id1767yx" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f3.png" id="39_h3qio"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4a7sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ytyno")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ytyno")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_k3d1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sgv64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gaoim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n73o2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_cs1hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v7taj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jym3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_50rgw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uwki"]
+size = Vector2(13, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vupj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4a7sh")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4a7sh")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_1uwki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wudxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yc71e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2btif")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_n0uqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7m1qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mh4ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_x13uo")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bbbl"]
+size = Vector2(15, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dlgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_3vupj")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3vupj")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_2bbbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_d5d72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_18b1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_aggb6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_f7hpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0xwag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_uvlxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kaldw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtkpj"]
+size = Vector2(15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6erj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_1dlgw")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_dtkpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5pcrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_fe1od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_fq8n2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_ipkxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_vjpxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_u7ijn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_h3qio")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wt8o"]
+size = Vector2(14, 20)
+
+[node name="Base" type="Node2D" unique_id=292423831]
+
+[node name="Tiles" type="Node2D" parent="." unique_id=1961341320]
+
+[node name="Floor-01" parent="Tiles" unique_id=745772792 instance=ExtResource("1_3vi8l")]
+tile_map_data = PackedByteArray("AAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAAIAAwAAAAAAAAAAAAIAA0AAAACAAAAAAAIAA4AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAAQAAAAFAAEAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAABAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAAAAAAJAA0AAAAAAAAAAAAJAA4AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAAQAAAAEAAEAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAAKAAwAAAAAAAAAAAAKAA0AAAAAAAAAAAAKAA4AAAAAAAAAAAAKAA8AAAAAAAAAAAALAAQAAAAFAAEAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAALAAwAAAAAAAAAAAALAA0AAAAAAAAAAAALAA4AAAAAAAAAAAALAA8AAAACAAAAAAAMAAQAAAAFAAEAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAAMAAwAAAAAAAAAAAAMAA0AAAAAAAAAAAAMAA4AAAAAAAAAAAAMAA8AAAAAAAAAAAANAAQAAAAFAAEAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAABAAAAAAANAAoAAAABAAEAAAANAAsAAAAAAAAAAAANAAwAAAAAAAAAAAANAA0AAAAAAAAAAAANAA4AAAAAAAAAAAANAA8AAAAAAAAAAAAOAAQAAAAFAAEAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAOAAsAAAAAAAAAAAAOAAwAAAAAAAAAAAAOAA0AAAAAAAAAAAAOAA4AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAAQAAAAFAAEAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAPAAsAAAAAAAAAAAAPAAwAAAAAAAAAAAAPAA0AAAAAAAAAAAAPAA4AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAABAAAAAAAQAAcAAAABAAEAAAAQAAgAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAsAAAAAAAAAAAAQAAwAAAAAAAAAAAAQAA0AAAAAAAAAAAAQAA4AAAAAAAAAAAAQAA8AAAAAAAAAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAAAAAAAAAARAAoAAAAAAAAAAAARAAsAAAAAAAAAAAARAAwAAAAAAAAAAAARAA0AAAAAAAAAAAARAA4AAAAAAAAAAAARAA8AAAAAAAAAAAASAAQAAAAFAAEAAAASAAUAAAAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAAAAAAAAAASAAoAAAAAAAAAAAASAAsAAAAAAAAAAAASAAwAAAAAAAAAAAASAA0AAAAAAAAAAAASAA4AAAAAAAAAAAASAA8AAAAAAAAAAAATAAQAAAAFAAEAAAATAAUAAAAAAAAAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAATAAwAAAACAAAAAAATAA0AAAAAAAAAAAATAA4AAAAAAAAAAAATAA8AAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAAUAA0AAAAAAAAAAAAUAA4AAAABAAAAAAAUAA8AAAAAAAAAAAAVAAQAAAAAAAAAAAAVAAUAAAAAAAAAAAAVAAYAAAAAAAAAAAAVAAcAAAAAAAAAAAAVAAgAAAACAAAAAAAVAAkAAAAAAAAAAAAVAAoAAAAAAAAAAAAVAAsAAAAAAAAAAAAVAAwAAAAAAAAAAAAVAA0AAAAAAAAAAAAVAA4AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAAQAAAAFAAEAAAAWAAUAAAAAAAAAAAAWAAYAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAgAAAAAAAAAAAAWAAkAAAAAAAAAAAAWAAoAAAAAAAAAAAAWAAsAAAAAAAAAAAAWAAwAAAAAAAAAAAAWAA0AAAAAAAAAAAAWAA4AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAAQAAAAFAAEAAAAXAAUAAAAAAAAAAAAXAAYAAAAAAAAAAAAXAAcAAAAAAAAAAAAXAAgAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAsAAAAAAAAAAAAXAAwAAAAAAAAAAAAXAA0AAAAAAAAAAAAXAA4AAAAAAAAAAAAXAA8AAAAAAAAAAAAYAAQAAAAFAAEAAAAYAAUAAAAAAAAAAAAYAAYAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAgAAAAAAAAAAAAYAAkAAAAAAAAAAAAYAAoAAAAAAAAAAAAYAAsAAAAAAAAAAAAYAAwAAAAAAAAAAAAYAA0AAAABAAAAAAAYAA4AAAABAAEAAAAYAA8AAAAAAAAAAAAZAAQAAAAFAAEAAAAZAAUAAAAAAAAAAAAZAAYAAAAAAAAAAAAZAAcAAAAAAAAAAAAZAAgAAAAAAAAAAAAZAAkAAAAAAAAAAAAZAAoAAAAAAAAAAAAZAAsAAAAAAAAAAAAZAAwAAAAAAAAAAAAZAA0AAAABAAAAAAAZAA4AAAABAAAAAAAZAA8AAAAAAAAAAAAaAAQAAAAFAAEAAAAaAAUAAAAAAAAAAAAaAAYAAAABAAAAAAAaAAcAAAAAAAAAAAAaAAgAAAAAAAAAAAAaAAkAAAAAAAAAAAAaAAoAAAAAAAAAAAAaAAsAAAAAAAAAAAAaAAwAAAAAAAAAAAAaAA0AAAAAAAAAAAAaAA4AAAAAAAAAAAAaAA8AAAAAAAAAAAAbAAQAAAAFAAEAAAAbAAUAAAABAAAAAAAbAAYAAAABAAAAAAAbAAcAAAAAAAAAAAAbAAgAAAAAAAAAAAAbAAkAAAAAAAAAAAAbAAoAAAAAAAAAAAAbAAsAAAAAAAAAAAAbAAwAAAAAAAAAAAAbAA0AAAAAAAAAAAAbAA4AAAAAAAAAAAAbAA8AAAAAAAAAAAAcAAQAAAAFAAEAAAAcAAUAAAABAAAAAAAcAAYAAAAAAAAAAAAcAAcAAAAAAAAAAAAcAAgAAAAAAAAAAAAcAAkAAAABAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAcAA4AAAAAAAAAAAAcAA8AAAAAAAAAAAAdAAQAAAAFAAEAAAAdAAUAAAAAAAAAAAAdAAYAAAAAAAAAAAAdAAcAAAAAAAAAAAAdAAgAAAAAAAAAAAAdAAkAAAAAAAAAAAAdAAoAAAAAAAAAAAAdAAsAAAAAAAAAAAAdAAwAAAAAAAAAAAAdAA0AAAAAAAAAAAAdAA4AAAAAAAAAAAAdAA8AAAAAAAAAAAAeAAQAAAAFAAUAAAAeAAUAAAAFAAUAAAAeAAYAAAAFAAUAAAAeAAcAAAAFAAUAAAAeAAgAAAAFAAUAAAAeAAkAAAAFAAUAAAAeAAoAAAAFAAUAAAAeAAsAAAAFAAUAAAAeAAwAAAAFAAUAAAAeAA0AAAAFAAUAAAAeAA4AAAAFAAUAAAAeAA8AAAAFAAUAAAAHAAQAAAAEAAUAAAAHAAUAAAAEAAUAAAAHAAYAAAAEAAUAAAAHAAcAAAAEAAUAAAAHAAgAAAAEAAUAAAAHAAkAAAAEAAUAAAAHAAoAAAAEAAUAAAAHAAsAAAAEAAUAAAAHAAwAAAAEAAUAAAAHAA0AAAAEAAUAAAAHAA4AAAAEAAUAAAAHAA8AAAAEAAUAAAAIAAQAAAAEAAEAAAA=")
+
+[node name="Wall-02" parent="Tiles" unique_id=1034798847 instance=ExtResource("2_8rhti")]
+tile_map_data = PackedByteArray("AAAWAAIAAAACAAcAAAAWAAMAAAACAAcAAAAXAAMAAAACAAcAAAAXAAIAAAACAAcAAAAYAAMAAAACAAcAAAAZAAMAAAACAAcAAAAZAAIAAAACAAcAAAAaAAIAAAACAAcAAAAYAAIAAAACAAcAAAAaAAMAAAACAAcAAAAcAAMAAAACAAcAAAAcAAIAAAACAAcAAAAbAAIAAAACAAcAAAAbAAMAAAACAAcAAAAPAAIAAAACAAcAAAAPAAMAAAACAAcAAAAOAAIAAAACAAcAAAANAAIAAAACAAcAAAANAAMAAAACAAcAAAAMAAMAAAACAAcAAAAMAAIAAAACAAcAAAALAAIAAAACAAcAAAALAAMAAAACAAcAAAAOAAMAAAACAAcAAAAKAAIAAAACAAcAAAAJAAIAAAACAAcAAAAKAAMAAAACAAcAAAAJAAMAAAACAAcAAAAQAAIAAAACAAcAAAAQAAMAAAACAAcAAAARAAIAAAACAAcAAAARAAMAAAACAAcAAAASAAIAAAACAAcAAAASAAMAAAACAAcAAAATAAIAAAACAAcAAAATAAMAAAACAAcAAAAUAAIAAAACAAcAAAAUAAMAAAACAAcAAAAVAAIAAAACAAcAAAAVAAMAAAACAAcAAAAIAAIAAAACAAcAAAAIAAMAAAACAAcAAAAdAAIAAAACAAcAAAAdAAMAAAACAAcAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAAAAAMAAAAHAAUAAAAAAAMAAAAHAAYAAAAAAAMAAAAHAAcAAAAAAAMAAAAHAAgAAAAAAAMAAAAHAAkAAAAAAAMAAAAHAAoAAAAAAAMAAAAHAAsAAAAAAAMAAAAeAAQAAAAAAAMAAAAeAAUAAAAAAAMAAAAeAAYAAAAAAAMAAAAeAAcAAAAAAAMAAAAeAAgAAAAAAAMAAAAeAAkAAAAAAAMAAAAeAAoAAAAAAAMAAAAeAAsAAAAAAAMAAAAeAAwAAAAAAAMAAAAeAA0AAAAAAAMAAAAeAA4AAAAAAAMAAAAHAAwAAAAAAAMAAAAHAA0AAAAAAAMAAAAHAA4AAAAAAAMAAAAHAA8AAAAAAAMAAAAeAA8AAAAAAAMAAAAeAAMAAAADAAEAAAAeAAIAAAADAAEAAAAHABEAAAABAAUAAAAIABEAAAACAAcAAAAJABEAAAACAAcAAAAKABEAAAACAAcAAAALABEAAAACAAcAAAAMABEAAAACAAcAAAANABEAAAACAAcAAAAOABEAAAACAAcAAAAPABEAAAACAAcAAAAQABEAAAACAAcAAAARABEAAAACAAcAAAASABEAAAACAAcAAAATABEAAAACAAcAAAAUABEAAAACAAcAAAAVABEAAAACAAcAAAAWABEAAAACAAcAAAAXABEAAAACAAcAAAAYABEAAAACAAcAAAAZABEAAAACAAcAAAAaABEAAAACAAcAAAAcABEAAAACAAcAAAAdABEAAAACAAcAAAAbABEAAAACAAcAAAAeABEAAAADAAcAAAAHAAAAAAABAAAAAAAHAAEAAAABAAEAAAAIAAAAAAACAAYAAAAIAAEAAAACAAcAAAAJAAAAAAACAAYAAAAJAAEAAAACAAcAAAAKAAAAAAACAAYAAAAKAAEAAAACAAcAAAALAAAAAAACAAYAAAALAAEAAAACAAcAAAAMAAAAAAACAAYAAAAMAAEAAAACAAcAAAANAAAAAAACAAYAAAANAAEAAAACAAcAAAAOAAAAAAACAAYAAAAOAAEAAAACAAcAAAAPAAAAAAACAAYAAAAPAAEAAAACAAcAAAAQAAAAAAACAAYAAAAQAAEAAAACAAcAAAARAAAAAAACAAYAAAARAAEAAAACAAcAAAASAAAAAAACAAYAAAASAAEAAAACAAcAAAATAAAAAAACAAYAAAATAAEAAAACAAcAAAAUAAAAAAACAAYAAAAUAAEAAAACAAcAAAAVAAAAAAACAAYAAAAVAAEAAAACAAcAAAAWAAAAAAACAAYAAAAWAAEAAAACAAcAAAAXAAAAAAACAAYAAAAXAAEAAAACAAcAAAAYAAAAAAACAAYAAAAYAAEAAAACAAcAAAAZAAAAAAACAAYAAAAZAAEAAAACAAcAAAAaAAAAAAACAAYAAAAaAAEAAAACAAcAAAAbAAAAAAACAAYAAAAbAAEAAAACAAcAAAAcAAAAAAACAAYAAAAcAAEAAAACAAcAAAAdAAAAAAACAAYAAAAdAAEAAAACAAcAAAAeAAAAAAADAAAAAAAeAAEAAAADAAEAAAA=")
+
+[node name="Wall-03" parent="Tiles" unique_id=946896401 instance=ExtResource("2_8rhti")]
+tile_map_data = PackedByteArray("AAATAAIAAAASAAYAAAASAAIAAAARAAYAAAATAAMAAAASAAcAAAASAAMAAAARAAcAAAARAAMAAAAQAAcAAAARAAIAAAAQAAYAAAAUAAIAAAATAAYAAAAUAAMAAAATAAcAAAAQAAIAAAAPAAYAAAAQAAQAAAAPAAcAAAAQAAMAAAAPAAYAAAAVAAMAAAAPAAYAAAAVAAIAAAAPAAYAAAAVAAQAAAAPAAcAAAAQAAEAAAAPAAUAAAAVAAEAAAAPAAUAAAASAAEAAAARAAUAAAATAAEAAAASAAUAAAA=")
+
+[node name="Wall-01" parent="Tiles" unique_id=745559698 instance=ExtResource("3_8rhti")]
+tile_map_data = PackedByteArray("AAAHABAAAAAIAAMAAAAIABAAAAAJAAMAAAAJABAAAAAJAAMAAAAKABAAAAAJAAMAAAALABAAAAAJAAMAAAAMABAAAAAJAAMAAAANABAAAAAJAAMAAAAOABAAAAAJAAMAAAAPABAAAAAJAAMAAAAQABAAAAAJAAMAAAARABAAAAAJAAMAAAASABAAAAAJAAMAAAATABAAAAAJAAMAAAAUABAAAAAJAAMAAAAVABAAAAAJAAMAAAAWABAAAAAJAAMAAAAdABAAAAAJAAMAAAAcABAAAAAJAAMAAAAbABAAAAAJAAMAAAAaABAAAAAJAAMAAAAZABAAAAAJAAMAAAAYABAAAAAJAAMAAAAXABAAAAAJAAMAAAAeABAAAAALAAMAAAA=")
+
+[node name="Characters" type="Node2D" parent="." unique_id=801799122]
+
+[node name="Knight_Visual" type="CharacterBody2D" parent="Characters" unique_id=1188785464]
+position = Vector2(205, 111)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Characters/Knight_Visual" unique_id=1196448624]
+sprite_frames = SubResource("SpriteFrames_4a7sh")
+animation = &"idle"
+offset = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Knight_Visual" unique_id=598522659]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_1uwki")
+
+[node name="Wizard_Visual" type="CharacterBody2D" parent="Characters" unique_id=2066633198]
+position = Vector2(376, 100)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Characters/Wizard_Visual" unique_id=1537982842]
+sprite_frames = SubResource("SpriteFrames_3vupj")
+animation = &"idle"
+offset = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Wizard_Visual" unique_id=178572893]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_2bbbl")
+
+[node name="Elf_Visual" type="CharacterBody2D" parent="Characters" unique_id=1849041910]
+position = Vector2(241, 181)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Characters/Elf_Visual" unique_id=251445834]
+sprite_frames = SubResource("SpriteFrames_1dlgw")
+animation = &"hit"
+offset = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Elf_Visual" unique_id=1550142847]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_dtkpj")
+
+[node name="Dwarf_Visual" type="CharacterBody2D" parent="Characters" unique_id=1241436236]
+position = Vector2(346, 190)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Characters/Dwarf_Visual" unique_id=1205874896]
+sprite_frames = SubResource("SpriteFrames_e6erj")
+animation = &"idle"
+offset = Vector2(-1, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Dwarf_Visual" unique_id=1332723448]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_8wt8o")

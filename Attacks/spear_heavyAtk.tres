@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://co8mlaw4q0knx"]
+
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="1_j2e0n"]
+
+[resource]
+script = ExtResource("1_j2e0n")
+name = "spear_heavyAtk"
+animation_name = "spear_heavy"
+metadata/_custom_type_script = "uid://bqk3erxkqb6g4"

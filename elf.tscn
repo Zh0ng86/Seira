@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://dh30ferarxfg" path="res://Attacks/bow_lightAtk.tres" id="3_r7w1b"]
 [ext_resource type="Resource" uid="uid://cojfjn0etefkd" path="res://Attacks/bow_heavyAtk.tres" id="4_bvkqt"]
 [ext_resource type="Texture2D" uid="uid://bcrxnhtj21b8u" path="res://Characters/Elf/idle/elf_f_idle_anim_f2.png" id="4_yfv56"]
-[ext_resource type="Resource" uid="uid://cs6uujajalx6k" path="res://Characters/Elf/elf_stats.tres" id="5_411n1"]
 [ext_resource type="Texture2D" uid="uid://cyq7nkdf8t6o3" path="res://Characters/Elf/idle/elf_f_idle_anim_f3.png" id="5_m5spg"]
 [ext_resource type="Texture2D" uid="uid://4oqjvwhhb3dh" path="res://Characters/Elf/run/elf_f_run_anim_f0.png" id="6_a0aes"]
 [ext_resource type="Texture2D" uid="uid://sgryrltkp88i" path="res://Characters/Elf/run/elf_f_run_anim_f1.png" id="7_qg8ks"]
@@ -20,6 +19,10 @@
 [ext_resource type="Script" uid="uid://d34l21tycognk" path="res://Scripts/arrow_visual.gd" id="16_bvkqt"]
 [ext_resource type="Texture2D" uid="uid://d0e4hdrif3x8o" path="res://UI/health_bar.tres" id="18_rek0w"]
 [ext_resource type="Texture2D" uid="uid://c43oj1rwvq4bn" path="res://UI/health_fill.tres" id="19_411n1"]
+[ext_resource type="Texture2D" uid="uid://bfu57fmdaq8at" path="res://Characters/Elf/fairy/angel_idle_anim_f0.png" id="20_jye1f"]
+[ext_resource type="Texture2D" uid="uid://dc454w7nf2iku" path="res://Characters/Elf/fairy/angel_idle_anim_f1.png" id="21_u4lq5"]
+[ext_resource type="Texture2D" uid="uid://bwpy0g5cxsxf1" path="res://Characters/Elf/fairy/angel_idle_anim_f2.png" id="22_52j4y"]
+[ext_resource type="Texture2D" uid="uid://jjl110j8xdtk" path="res://Characters/Elf/fairy/angel_idle_anim_f3.png" id="23_dwoj5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_76btn"]
 animations = [{
@@ -76,7 +79,7 @@ animations = [{
 size = Vector2(15, 16)
 
 [sub_resource type="Animation" id="Animation_7woc6"]
-length = 0.001
+length = 0.033333335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -124,6 +127,42 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fairy:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fairy:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fairy:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_kca5b"]
@@ -193,6 +232,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_yfv56"]
 resource_name = "bow_light"
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -256,6 +296,46 @@ tracks/4/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_rek0w"]
+resource_name = "elf_passive"
+length = 0.56666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fairy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.33333334, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-10, -1), Vector2(0, 3), Vector2(9, -1), Vector2(0, -8), Vector2(-14, -13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fairy:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fairy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_nabqu"]
 resource_name = "sword_heavy"
 tracks/0/type = "value"
@@ -315,14 +395,34 @@ _data = {
 &"RESET": SubResource("Animation_7woc6"),
 &"bow_heavy": SubResource("Animation_kca5b"),
 &"bow_light": SubResource("Animation_yfv56"),
+&"elf_passive": SubResource("Animation_rek0w"),
 &"sword_heavy": SubResource("Animation_nabqu"),
 &"sword_light": SubResource("Animation_1o34j")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_411n1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_jye1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_u4lq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_52j4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dwoj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Elf" type="CharacterBody2D" unique_id=719557867]
 script = ExtResource("1_qg8ks")
 attacks = Array[ExtResource("2_bg7b7")]([ExtResource("3_r7w1b"), ExtResource("4_bvkqt")])
-stats = ExtResource("5_411n1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1825521558]
 sprite_frames = SubResource("SpriteFrames_76btn")
@@ -358,3 +458,10 @@ value = 100.0
 texture_under = ExtResource("18_rek0w")
 texture_progress = ExtResource("19_411n1")
 texture_progress_offset = Vector2(2, 2)
+
+[node name="Fairy" type="AnimatedSprite2D" parent="." unique_id=1676243885]
+visible = false
+position = Vector2(-10, -1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_411n1")
+frame_progress = 0.42370075

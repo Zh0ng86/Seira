@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://v5kw1ycciyo8"]
+
+[ext_resource type="Texture2D" uid="uid://c2r7xm4xpmi81" path="res://TileMaps/Sprites/stairs.tres" id="1_rt3ym"]
+[ext_resource type="Script" uid="uid://coa00g2pl0mhg" path="res://TileMaps/Sprites/stairs.gd" id="1_wnyqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnyqw"]
+size = Vector2(16, 16)
+
+[node name="Area2D" type="Area2D" unique_id=1973438921]
+script = ExtResource("1_wnyqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=549869052]
+texture = ExtResource("1_rt3ym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2108868949]
+shape = SubResource("RectangleShape2D_wnyqw")

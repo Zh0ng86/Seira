@@ -2,11 +2,11 @@ class_name Player extends CharacterBody2D
 
 
 @export var attacks: Array[Attack] = []
-@export var stats : Battle_Stats
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weapon_sprite: Sprite2D = $Weapon
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var health_bar : TextureProgressBar = $Health
+var stats : Battle_Stats
 
 var cardinal_dir : Vector2 = Vector2.DOWN
 var dir : Vector2 = Vector2.ZERO
@@ -16,9 +16,7 @@ var state : String = 'idle'
 
 func _ready() -> void:
 	health_bar.visible = false
-	health_bar.max_value = stats.max_hp
-	health_bar.value = stats.hp
-	stats.hp_changed.connect(_on_hp_changed)
+	weapon_sprite.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

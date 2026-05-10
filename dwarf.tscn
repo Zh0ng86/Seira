@@ -2,14 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://2ag8yl3ptlsv" path="res://Characters/Dwarf/dwarf_m_hit_anim_f0.png" id="1_30s2a"]
 [ext_resource type="Script" uid="uid://c3cmpk0yvpd56" path="res://Characters/Dwarf/dwarf.gd" id="1_g5jdp"]
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="2_1su27"]
 [ext_resource type="Texture2D" uid="uid://h2oxn42oelwa" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f0.png" id="2_30s2a"]
 [ext_resource type="Texture2D" uid="uid://ealkomccuqs4" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f1.png" id="3_g5jdp"]
+[ext_resource type="Resource" uid="uid://b7pd6ysfkx3el" path="res://Attacks/axe_lightAtk.tres" id="3_pk3i3"]
+[ext_resource type="Resource" uid="uid://dhs2auw4leu6n" path="res://Attacks/axe_heavyAtk.tres" id="4_fpev4"]
 [ext_resource type="Texture2D" uid="uid://b8gp5sah6ol1" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f2.png" id="4_ki53n"]
 [ext_resource type="Texture2D" uid="uid://du8llbitpoxb3" path="res://Characters/Dwarf/idle/dwarf_m_idle_anim_f3.png" id="5_4226k"]
 [ext_resource type="Texture2D" uid="uid://cyxyvw84ryo5u" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f0.png" id="6_30s2a"]
 [ext_resource type="Texture2D" uid="uid://docvjneqqeqf0" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f1.png" id="7_g5jdp"]
 [ext_resource type="Texture2D" uid="uid://bgvpvlx6h58qt" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f2.png" id="8_ki53n"]
 [ext_resource type="Texture2D" uid="uid://nhb8id1767yx" path="res://Characters/Dwarf/run/dwarf_m_run_anim_f3.png" id="9_4226k"]
+[ext_resource type="Texture2D" uid="uid://p0a56xgk0o71" path="res://Weapons/weapon_double_axe.png" id="11_4226k"]
+[ext_resource type="Script" uid="uid://c18f2bo30qj75" path="res://Scripts/melee.gd" id="12_500gv"]
+[ext_resource type="Texture2D" uid="uid://d0e4hdrif3x8o" path="res://UI/health_bar.tres" id="13_njwq5"]
+[ext_resource type="Texture2D" uid="uid://c43oj1rwvq4bn" path="res://UI/health_fill.tres" id="14_1su27"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fpev4"]
 animations = [{
@@ -17,7 +24,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_30s2a")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -59,14 +66,215 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_837jh"]
 size = Vector2(14, 20)
 
+[sub_resource type="Animation" id="Animation_7woc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4226k"]
+resource_name = "axe_heavy"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4, 0.53333336, 0.67004126, 0.708044, 0.7666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 5), Vector2(4, 1), Vector2(4, 1), Vector2(3, 4), Vector2(3, 4), Vector2(3, 4), Vector2(-4, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.3027961, 0.4, 0.5572589, 0.6666667, 0.6908815, 0.7666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.6526432, -0.6526432, 4.016002608838953, 4.016002608838953, -1.2444197566719573, -1.2444197566719573, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.33333334, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show_fx"
+}, {
+"args": [],
+"method": &"show_fx"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_njwq5"]
+resource_name = "axe_light"
+length = 0.56666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 5), Vector2(7, 0), Vector2(-4, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.23333333, 0.3, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.9011435, -0.9011435, 4.153883619746504, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nabqu"]
+resource_name = "sword_heavy"
+length = 0.73333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.67168504, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 6), Vector2(7, 4), Vector2(7, 4), Vector2(-4, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.26666668, 0.4, 0.5218049, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -2.5369213, -2.5369213, -6.876597252857659, -6.876597252857659, -6.283185307179586]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.33333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_fx"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1o34j"]
+resource_name = "sword_light"
+length = 0.6333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.502376, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 6), Vector2(7, 0.5), Vector2(7, 0.5), Vector2(-4, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.36666667, 0.50515157, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.42791614, -0.42791614, 3.7088246604879505, 3.7088246604879505, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1su27"]
+_data = {
+&"RESET": SubResource("Animation_7woc6"),
+&"axe_heavy": SubResource("Animation_4226k"),
+&"axe_light": SubResource("Animation_njwq5"),
+&"sword_heavy": SubResource("Animation_nabqu"),
+&"sword_light": SubResource("Animation_1o34j")
+}
+
 [node name="Dwarf" type="CharacterBody2D" unique_id=1955146273]
 script = ExtResource("1_g5jdp")
+attacks = Array[ExtResource("2_1su27")]([ExtResource("3_pk3i3"), ExtResource("4_fpev4")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1926212812]
 sprite_frames = SubResource("SpriteFrames_fpev4")
-animation = &"idle"
+animation = &"hit"
 offset = Vector2(-1, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486312305]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_837jh")
+
+[node name="Weapon" type="Sprite2D" parent="." unique_id=2016219591]
+position = Vector2(-4, 5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_4226k")
+offset = Vector2(0, -12)
+script = ExtResource("12_500gv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=925737613]
+libraries/ = SubResource("AnimationLibrary_1su27")
+
+[node name="Health" type="TextureProgressBar" parent="." unique_id=532997062]
+offset_left = -12.0
+offset_top = -17.0
+offset_right = 36.0
+offset_bottom = -10.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_under = ExtResource("13_njwq5")
+texture_progress = ExtResource("14_1su27")
+texture_progress_offset = Vector2(2, 2)

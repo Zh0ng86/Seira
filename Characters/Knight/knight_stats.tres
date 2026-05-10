@@ -5,6 +5,9 @@
 [resource]
 script = ExtResource("1_ewdyf")
 char_name = "Knight"
-defense = 8
+level = 2
+attack = 12
+defense = 10
 precision = 10
+passive = "Knight will counter an enemy if he successfully dodges an attack."
 metadata/_custom_type_script = "uid://ik5djf20v0iu"

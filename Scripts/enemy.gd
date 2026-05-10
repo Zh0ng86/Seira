@@ -5,11 +5,13 @@ class_name Enemy extends CharacterBody2D
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var detectedArea : Area2D = $Area2D
 @onready var health_bar : TextureProgressBar = $Health
+@onready var collision2d : CollisionShape2D = $Area2D/CollisionShape2D
 
+var DETECT_RADIUS : int = 50
 var enemy_name : String = "enemy"
-var move_speed : float = 80
+var move_speed : float = 70
 var wander_timer : float = 0.0
-var wander_duration : float = 2.0 + randf() * 1
+var wander_duration : float = 1 + randf() * 1
 var target_pos : Vector2
 var noise : FastNoiseLite = FastNoiseLite.new()
 var player_detected : bool = false
@@ -19,15 +21,16 @@ var SMOOTH_FACTOR: float = 14.0
 var current_anim: String = ""
 var MIN_SPEED: float = 20.0
 
-var WANDER_ARRIVE_DIST: float = 16.0
+var WANDER_ARRIVE_DIST: float = 8
 var IDLE_AT_POINT_MIN: float = 0.5
-var IDLE_AT_POINT_MAX: float = 1.5
+var IDLE_AT_POINT_MAX: float = 1
 var idle_at_point_timer: float = 0.0
 var arrived: bool = false
 var hit: bool = false
 
 
 func _ready() -> void:
+	collision2d.shape.radius = DETECT_RADIUS
 	stats = stats.duplicate()
 	
 	noise.seed = randi()
@@ -108,13 +111,9 @@ func on_collide_player():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider.is_in_group("player"):
-			start_battle()
-			return 
-
-func start_battle(): 
-	velocity = Vector2.ZERO
-	GameManager.battle_enemy = enemy_name
-	GameManager.transition_to("res://battle.tscn")
+			velocity = Vector2.ZERO
+			GameManager.start_battle(name)
+			queue_free()
 
 func animator(delta: float) -> void:
 	smooth_speed = lerp(smooth_speed, velocity.length(), SMOOTH_FACTOR * delta)

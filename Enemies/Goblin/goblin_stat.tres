@@ -4,11 +4,12 @@
 
 [resource]
 script = ExtResource("1_qoef5")
-char_name = "gremlin"
-level = 2
-max_hp = 40
-hp = 40
+char_name = "Goblin"
+level = 1
+max_hp = 20
+hp = 20
 attack = 5
 defense = 2
-speed = 20
+precision = 7
+speed = 18
 metadata/_custom_type_script = "uid://ik5djf20v0iu"

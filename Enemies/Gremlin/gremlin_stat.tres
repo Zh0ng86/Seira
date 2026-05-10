@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_qie43")
-char_name = "gremlin"
-level = 2
-max_hp = 50
-hp = 50
-attack = 8
-speed = 12
+char_name = "Gremlin"
+level = 1
+max_hp = 20
+hp = 20
+attack = 9
+precision = 8
 metadata/_custom_type_script = "uid://ik5djf20v0iu"

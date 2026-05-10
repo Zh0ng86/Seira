@@ -1,29 +1,58 @@
 extends Node
 
+const CHAR_STATS = {
+	"Knight": preload("res://Characters/Knight/knight_stats.tres"),
+	"Elf": preload("res://Characters/Elf/elf_stats.tres"),
+	"Wizard": preload("res://Characters/Wizard/wizard_stats.tres"),
+	"Dwarf": preload("res://Characters/Dwarf/dwarf_stats.tres"),
+	"Lizard": preload("res://Characters/Lizard/lizard_stats.tres")
+}
+
+const GAME_SCENES = {
+	"Dungeon": "res://dungeon.tscn", 
+	"Battle": "res://battle.tscn"
+}
+
 # Overworld
+var roaming_char : String = "Knight"
 var player_pos : Vector2 = Vector2.ZERO
 var _overlay : ColorRect
 var _canvas : CanvasLayer
 var can_move : bool = true
-
+var heal_pot : int = 5
+var current_floor : int = 1
 
 # Combat
-var party : Array = []
+var _dungeon_scene : Node = null
+var _battle_scene : Node = null
+var party : Array[String] = []
+var party_stats : Array[Battle_Stats] = []
 var active_index : int = 0
 var battle_enemy : String = ""
+var battle_state : String = "idle"
 signal melee_fx()
 signal arrow_released(is_heavy: bool)
 signal spell_used(is_heavy: bool)
+signal heal_fx(char_pos: Vector2)
+
+var _battle_loading : bool = false
 
 func ready_seeder(): 
-	party.append("Knight")
 	party.append("Elf")
+	party.append("Knight")
 	party.append("Wizard")
+	
+	for member in party:
+		var stats = CHAR_STATS[member].duplicate()
+		party_stats.append(stats)
 
 func _ready() -> void: 
 	ready_seeder()
 	
 	transition_canvas()
+
+func save(): 
+	print("save")
 
 func transition_canvas(): 
 	_canvas = CanvasLayer.new()
@@ -56,3 +85,41 @@ func next_hero():
 
 func prev_hero():
 	active_index = (active_index - 1 + party.size()) % party.size() 
+
+func start_battle(enemy_name: String):
+	if _battle_loading:
+		return
+	_battle_loading = true
+	battle_enemy = enemy_name
+	can_move = false
+	
+	call_deferred("_do_start_battle")
+
+func on_battle_finished(total_exp: int) -> void:     
+	battle_state = "loading" 
+	
+	
+	_battle_scene.process_mode = Node.PROCESS_MODE_DISABLED
+	_battle_scene.visible = false
+	
+	get_tree().root.remove_child(_battle_scene)
+	get_tree().current_scene = _dungeon_scene
+	_dungeon_scene.process_mode = Node.PROCESS_MODE_INHERIT
+	_dungeon_scene.visible = true
+	
+	_battle_scene.call_deferred("free")
+	_battle_scene = null
+	_dungeon_scene = null
+	
+	
+	_battle_loading = false
+	can_move = true
+	
+func _do_start_battle() -> void:
+	_dungeon_scene = get_tree().current_scene
+	_dungeon_scene.process_mode = Node.PROCESS_MODE_DISABLED
+	_dungeon_scene.visible = false
+	
+	_battle_scene = load(GAME_SCENES["Battle"]).instantiate()
+	get_tree().root.add_child(_battle_scene)
+	get_tree().current_scene = _battle_scene

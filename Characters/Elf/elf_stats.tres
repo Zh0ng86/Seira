@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_hxa00")
 char_name = "Elf"
-max_hp = 80
-hp = 80
-precision = 20
-speed = 12
+level = 3
+precision = 12
+speed = 15
+passive = "Elf has a 20% chance to summon a fairy to heal 10% of her health when hit by an attack."
 metadata/_custom_type_script = "uid://ik5djf20v0iu"

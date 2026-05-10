@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://cfvr1iauf05ih"]
+
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="1_suno8"]
+
+[resource]
+script = ExtResource("1_suno8")
+name = "sword_counter"
+animation_name = "sword_counter"
+metadata/_custom_type_script = "uid://bqk3erxkqb6g4"

@@ -1,0 +1,1060 @@
+[gd_scene format=3 uid="uid://bv03yi4p2oysm"]
+
+[ext_resource type="FontFile" uid="uid://dc7cu367x652u" path="res://UI/yoster.ttf" id="1_4fiuh"]
+[ext_resource type="Script" uid="uid://cepdot2ystruv" path="res://Scripts/roam_ui.gd" id="1_6rr40"]
+[ext_resource type="Texture2D" uid="uid://iloab5g47mny" path="res://UI/buttons/button1_press.tres" id="2_0w6e5"]
+[ext_resource type="Texture2D" uid="uid://b20amj6nfi4ye" path="res://UI/container.tres" id="2_h81ot"]
+[ext_resource type="Texture2D" uid="uid://cociqwspv7o8i" path="res://UI/flask_big_red.png" id="3_6rr40"]
+[ext_resource type="Texture2D" uid="uid://uxditpn58uys" path="res://UI/highlight.tres" id="4_0w6e5"]
+[ext_resource type="Texture2D" uid="uid://d38lnyjfl57gx" path="res://UI/highlight_green.tres" id="4_h81ot"]
+[ext_resource type="Texture2D" uid="uid://db6g0osc4w06i" path="res://UI/BrownFantasyUISheet.png" id="5_o2jkc"]
+[ext_resource type="Texture2D" uid="uid://ny1h5s4lnga4" path="res://UI/exp_bar.tres" id="6_2qbci"]
+[ext_resource type="Texture2D" uid="uid://c3tdosttmnhs1" path="res://UI/exp_fill.tres" id="7_ow1yt"]
+[ext_resource type="Texture2D" uid="uid://d0e4hdrif3x8o" path="res://UI/health_bar.tres" id="8_o2t6a"]
+[ext_resource type="Texture2D" uid="uid://c43oj1rwvq4bn" path="res://UI/health_fill.tres" id="9_8gukh"]
+[ext_resource type="Texture2D" uid="uid://ceqx2wjyb5vkv" path="res://UI/buttons/button2.tres" id="13_ow1yt"]
+[ext_resource type="Texture2D" uid="uid://daxq85d0sx45l" path="res://UI/buttons/button2_press.tres" id="14_o2t6a"]
+[ext_resource type="Texture2D" uid="uid://c1dnw4codl5el" path="res://UI/buttons/button2_highlight.tres" id="15_8gukh"]
+[ext_resource type="Texture2D" uid="uid://bfejjucxds0hf" path="res://UI/slider/slider.tres" id="16_o2t6a"]
+[ext_resource type="Texture2D" uid="uid://kxieaq17tkls" path="res://UI/buttons/button1.tres" id="17_8gukh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gkfd"]
+font = ExtResource("1_4fiuh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0tr35"]
+font = ExtResource("1_4fiuh")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_7j5ik"]
+font = ExtResource("1_4fiuh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_i1yd8"]
+font = ExtResource("1_4fiuh")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5i65"]
+font = ExtResource("1_4fiuh")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_awqy2"]
+font = ExtResource("1_4fiuh")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_0w6e5"]
+font = ExtResource("1_4fiuh")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_8wcgx"]
+font = ExtResource("1_4fiuh")
+font_size = 12
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gukh"]
+atlas = ExtResource("16_o2t6a")
+region = Rect2(0, 0, 15, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2t6a"]
+atlas = ExtResource("16_o2t6a")
+region = Rect2(0, 16, 15, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2t6a"]
+font = ExtResource("1_4fiuh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_duqhi"]
+font = ExtResource("1_4fiuh")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjmo3"]
+font = ExtResource("1_4fiuh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gukh"]
+font = ExtResource("1_4fiuh")
+font_size = 20
+font_color = Color(1, 0, 0, 1)
+
+[node name="UI" type="Node2D" unique_id=936323257]
+script = ExtResource("1_6rr40")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1976177117]
+
+[node name="Characters" type="HBoxContainer" parent="CanvasLayer" unique_id=937121609]
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 188.0
+offset_bottom = 58.0
+theme_override_constants/separation = 12
+
+[node name="Char1" type="TextureRect" parent="CanvasLayer/Characters" unique_id=1114406518]
+layout_mode = 2
+texture = ExtResource("2_0w6e5")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Characters/Char1" unique_id=851138097]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Char2" type="TextureRect" parent="CanvasLayer/Characters" unique_id=989903246]
+layout_mode = 2
+texture = ExtResource("2_0w6e5")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Characters/Char2" unique_id=874343318]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Char3" type="TextureRect" parent="CanvasLayer/Characters" unique_id=605062742]
+layout_mode = 2
+texture = ExtResource("2_0w6e5")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Characters/Char3" unique_id=615486384]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Floor" type="Label" parent="CanvasLayer" unique_id=1225888048]
+offset_left = 550.0
+offset_top = 10.0
+offset_right = 618.0
+offset_bottom = 33.0
+text = "Floor: X"
+label_settings = SubResource("LabelSettings_8gkfd")
+
+[node name="Menu" type="NinePatchRect" parent="CanvasLayer" unique_id=1378457070]
+offset_left = 350.0
+offset_top = 20.0
+offset_right = 600.0
+offset_bottom = 320.0
+texture = ExtResource("2_h81ot")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="Floor" type="Label" parent="CanvasLayer/Menu" unique_id=1737173312]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 88.0
+offset_bottom = 43.0
+text = "Floor: X"
+label_settings = SubResource("LabelSettings_8gkfd")
+
+[node name="Potion" type="TextureRect" parent="CanvasLayer/Menu" unique_id=528084068]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 12.0
+offset_right = 228.0
+offset_bottom = 52.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_6rr40")
+
+[node name="Value" type="Label" parent="CanvasLayer/Menu/Potion" unique_id=161324493]
+layout_mode = 0
+offset_left = 26.249985
+offset_top = 26.249996
+offset_right = 94.249985
+offset_bottom = 49.249996
+text = "10"
+label_settings = SubResource("LabelSettings_0tr35")
+
+[node name="Characters" type="HBoxContainer" parent="CanvasLayer/Menu" unique_id=817485112]
+layout_mode = 0
+offset_left = 30.999992
+offset_top = 48.0
+offset_right = 263.0
+offset_bottom = 112.0
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = 20
+
+[node name="Char1" type="NinePatchRect" parent="CanvasLayer/Menu/Characters" unique_id=1187543246]
+layout_mode = 2
+texture = ExtResource("4_h81ot")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Menu/Characters/Char1" unique_id=1570253912]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 28.0
+offset_bottom = 28.0
+scale = Vector2(2.57, 2.57)
+
+[node name="Char2" type="NinePatchRect" parent="CanvasLayer/Menu/Characters" unique_id=1279189561]
+layout_mode = 2
+texture = ExtResource("4_0w6e5")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Menu/Characters/Char2" unique_id=2067366178]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 28.0
+offset_bottom = 28.0
+scale = Vector2(2.57, 2.57)
+
+[node name="Char3" type="NinePatchRect" parent="CanvasLayer/Menu/Characters" unique_id=420590167]
+layout_mode = 2
+texture = ExtResource("4_0w6e5")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Menu/Characters/Char3" unique_id=781908454]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 28.0
+offset_bottom = 28.0
+scale = Vector2(2.57, 2.57)
+
+[node name="Bar" type="NinePatchRect" parent="CanvasLayer/Menu" unique_id=327445788]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 102.0
+offset_right = 238.0
+offset_bottom = 109.0
+texture = ExtResource("5_o2jkc")
+region_rect = Rect2(132, 182, 48, 7)
+patch_margin_left = 32
+patch_margin_right = 32
+
+[node name="Level" type="Label" parent="CanvasLayer/Menu" unique_id=1515808094]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 113.0
+offset_right = 154.0
+offset_bottom = 130.0
+text = "Level 3"
+label_settings = SubResource("LabelSettings_7j5ik")
+
+[node name="Exp" type="Control" parent="CanvasLayer/Menu" unique_id=1892024404]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 12.0
+offset_right = 41.0
+offset_bottom = 52.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/Exp" unique_id=2077839938]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 125.0
+offset_right = 51.0
+offset_bottom = 142.0
+text = "Exp"
+label_settings = SubResource("LabelSettings_7j5ik")
+
+[node name="Value" type="Label" parent="CanvasLayer/Menu/Exp" unique_id=718775239]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 142.0
+offset_right = 193.0
+offset_bottom = 159.0
+text = "1000/10000 "
+label_settings = SubResource("LabelSettings_i1yd8")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Menu/Exp" unique_id=964974538]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 125.0
+offset_right = 153.0
+offset_bottom = 133.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+value = 20.0
+nine_patch_stretch = true
+stretch_margin_left = 32
+stretch_margin_right = 32
+texture_under = ExtResource("6_2qbci")
+texture_progress = ExtResource("7_ow1yt")
+
+[node name="Hp" type="Control" parent="CanvasLayer/Menu" unique_id=1140676847]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 24.0
+offset_right = 41.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/Hp" unique_id=1235142299]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 146.0
+offset_right = 41.0
+offset_bottom = 163.0
+text = "Hp"
+label_settings = SubResource("LabelSettings_7j5ik")
+
+[node name="Value" type="Label" parent="CanvasLayer/Menu/Hp" unique_id=1065183605]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 150.0
+offset_right = 232.0
+offset_bottom = 167.0
+text = "100/100"
+label_settings = SubResource("LabelSettings_j5i65")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Menu/Hp" unique_id=565761611]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 150.0
+offset_right = 131.0
+offset_bottom = 157.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+value = 20.0
+stretch_margin_left = 32
+stretch_margin_right = 32
+texture_under = ExtResource("8_o2t6a")
+texture_progress = ExtResource("9_8gukh")
+texture_progress_offset = Vector2(2, 2)
+
+[node name="Stats" type="VBoxContainer" parent="CanvasLayer/Menu" unique_id=981141512]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 203.0
+offset_right = 236.0
+offset_bottom = 243.0
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Menu/Stats" unique_id=922351015]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Atk" type="Label" parent="CanvasLayer/Menu/Stats/HBoxContainer" unique_id=1632444460]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Attack: X"
+label_settings = SubResource("LabelSettings_awqy2")
+
+[node name="Def" type="Label" parent="CanvasLayer/Menu/Stats/HBoxContainer" unique_id=1843422606]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Defense: X"
+label_settings = SubResource("LabelSettings_awqy2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Menu/Stats" unique_id=1260345985]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Prc" type="Label" parent="CanvasLayer/Menu/Stats/HBoxContainer2" unique_id=1032246179]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Precision: X"
+label_settings = SubResource("LabelSettings_awqy2")
+
+[node name="Spd" type="Label" parent="CanvasLayer/Menu/Stats/HBoxContainer2" unique_id=1691946107]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Speed: X"
+label_settings = SubResource("LabelSettings_awqy2")
+
+[node name="Passive" type="Label" parent="CanvasLayer/Menu" unique_id=325176546]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 250.0
+offset_right = 230.0
+offset_bottom = 278.0
+text = "Passive"
+label_settings = SubResource("LabelSettings_0w6e5")
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=592980691]
+visible = false
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Main" type="Control" parent="CanvasLayer/Panel" unique_id=474128150]
+visible = false
+anchors_preset = 0
+offset_left = 272.0
+offset_top = 125.0
+offset_right = 312.0
+offset_bottom = 165.0
+
+[node name="Audio" type="TextureButton" parent="CanvasLayer/Panel/Main" unique_id=620704306]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 32.0
+texture_normal = ExtResource("13_ow1yt")
+texture_pressed = ExtResource("14_o2t6a")
+texture_hover = ExtResource("15_8gukh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Main/Audio" unique_id=603928742]
+layout_mode = 0
+offset_left = 29.00001
+offset_top = 7.0
+offset_right = 69.00001
+offset_bottom = 19.0
+text = "Audio "
+label_settings = SubResource("LabelSettings_8wcgx")
+horizontal_alignment = 1
+
+[node name="Keybinds" type="TextureButton" parent="CanvasLayer/Panel/Main" unique_id=687808021]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 96.0
+offset_bottom = 72.0
+texture_normal = ExtResource("13_ow1yt")
+texture_pressed = ExtResource("14_o2t6a")
+texture_hover = ExtResource("15_8gukh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Main/Keybinds" unique_id=2124823622]
+layout_mode = 0
+offset_left = 19.99999
+offset_top = 7.0
+offset_right = 77.99999
+offset_bottom = 19.0
+text = "Keybinds"
+label_settings = SubResource("LabelSettings_8wcgx")
+horizontal_alignment = 1
+
+[node name="Back" type="TextureButton" parent="CanvasLayer/Panel/Main" unique_id=418575034]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 112.0
+texture_normal = ExtResource("13_ow1yt")
+texture_pressed = ExtResource("14_o2t6a")
+texture_hover = ExtResource("15_8gukh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Main/Back" unique_id=1800043995]
+layout_mode = 0
+offset_left = 27.99999
+offset_top = 6.999995
+offset_right = 67.99999
+offset_bottom = 18.999996
+text = "Back"
+label_settings = SubResource("LabelSettings_8wcgx")
+horizontal_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/Panel/Main" unique_id=2100604634]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 96.0
+offset_bottom = 152.0
+texture_normal = ExtResource("13_ow1yt")
+texture_pressed = ExtResource("14_o2t6a")
+texture_hover = ExtResource("15_8gukh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Main/Quit" unique_id=702826569]
+layout_mode = 0
+offset_left = 27.99999
+offset_top = 6.999995
+offset_right = 67.99999
+offset_bottom = 18.999996
+text = "Quit"
+label_settings = SubResource("LabelSettings_8wcgx")
+horizontal_alignment = 1
+
+[node name="Audio" type="Control" parent="CanvasLayer/Panel" unique_id=583174402]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Master" type="HSlider" parent="CanvasLayer/Panel/Audio" unique_id=227586849]
+texture_filter = 1
+layout_mode = 0
+offset_left = 300.0
+offset_top = 110.0
+offset_right = 450.0
+offset_bottom = 126.0
+theme_override_icons/grabber = SubResource("AtlasTexture_8gukh")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_o2t6a")
+value = 23.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Audio/Master" unique_id=447228006]
+layout_mode = 0
+offset_left = -65.0
+offset_right = -6.0
+offset_bottom = 23.0
+text = "Master"
+label_settings = SubResource("LabelSettings_o2t6a")
+
+[node name="SFX" type="HSlider" parent="CanvasLayer/Panel/Audio" unique_id=1526914759]
+texture_filter = 1
+layout_mode = 0
+offset_left = 300.0
+offset_top = 140.0
+offset_right = 450.0
+offset_bottom = 156.0
+theme_override_icons/grabber = SubResource("AtlasTexture_8gukh")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_o2t6a")
+value = 23.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Audio/SFX" unique_id=959276053]
+layout_mode = 0
+offset_left = -65.0
+offset_right = -25.0
+offset_bottom = 23.0
+text = "SFX"
+label_settings = SubResource("LabelSettings_o2t6a")
+
+[node name="Music" type="HSlider" parent="CanvasLayer/Panel/Audio" unique_id=257036413]
+texture_filter = 1
+layout_mode = 0
+offset_left = 300.0
+offset_top = 170.0
+offset_right = 450.0
+offset_bottom = 186.0
+theme_override_icons/grabber = SubResource("AtlasTexture_8gukh")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_o2t6a")
+value = 23.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Audio/Music" unique_id=129375601]
+layout_mode = 0
+offset_left = -65.0
+offset_right = -18.0
+offset_bottom = 23.0
+text = "Music"
+label_settings = SubResource("LabelSettings_o2t6a")
+
+[node name="Back" type="TextureButton" parent="CanvasLayer/Panel/Audio" unique_id=238432094]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 205.0
+offset_right = 367.0
+offset_bottom = 237.0
+texture_normal = ExtResource("13_ow1yt")
+texture_pressed = ExtResource("14_o2t6a")
+texture_hover = ExtResource("15_8gukh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Audio/Back" unique_id=1814066625]
+layout_mode = 0
+offset_left = 27.99999
+offset_top = 6.999995
+offset_right = 67.99999
+offset_bottom = 18.999996
+text = "Back"
+label_settings = SubResource("LabelSettings_8wcgx")
+horizontal_alignment = 1
+
+[node name="Keybinds" type="Control" parent="CanvasLayer/Panel" unique_id=1985994666]
+visible = false
+anchors_preset = 0
+offset_top = 12.0
+offset_right = 40.0
+offset_bottom = 52.0
+
+[node name="Up" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=156926555]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 15.0
+offset_right = 269.0
+offset_bottom = 39.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Up" unique_id=1460189164]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Up" unique_id=621149775]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "W"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Up" unique_id=1961423800]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "Up"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Down" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=419452533]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 60.0
+offset_right = 269.0
+offset_bottom = 84.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Down" unique_id=1388564924]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Down" unique_id=1371514370]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "S"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Down" unique_id=743800652]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "Down"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Right" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=2039017039]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 105.0
+offset_right = 269.0
+offset_bottom = 129.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Right" unique_id=1222198294]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Right" unique_id=464469325]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "D"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Right" unique_id=1465104848]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "Right"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Left" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=291609846]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 150.0
+offset_right = 269.0
+offset_bottom = 174.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Left" unique_id=239489956]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Left" unique_id=802117200]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "A"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Left" unique_id=1113962559]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "Left"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Info" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=1935997573]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 195.0
+offset_right = 269.0
+offset_bottom = 219.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Info" unique_id=692985535]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Info" unique_id=112594646]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "F"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Info" unique_id=845202614]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "Info"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Toggle" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=438250442]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 240.0
+offset_right = 268.99997
+offset_bottom = 264.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Toggle" unique_id=1084476764]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Toggle" unique_id=438702977]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "T"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Toggle" unique_id=1600230833]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 0.6666663
+offset_right = -3.0
+offset_bottom = 23.666666
+text = "Toggle"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="LAtk" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=108519114]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 15.0
+offset_right = 504.0
+offset_bottom = 39.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/LAtk" unique_id=2041869215]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/LAtk" unique_id=1269242751]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "E"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/LAtk" unique_id=1090109572]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "L Atk"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="HAtk" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=1955649664]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 60.0
+offset_right = 504.0
+offset_bottom = 84.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/HAtk" unique_id=1856731917]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/HAtk" unique_id=1861996473]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "Q"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/HAtk" unique_id=229605674]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "H Atk"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Heal" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=1534484435]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 105.0
+offset_right = 504.0
+offset_bottom = 129.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Heal" unique_id=401451191]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Heal" unique_id=754684934]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "R"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Heal" unique_id=450984427]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "Heal"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Time" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=1571508377]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 150.0
+offset_right = 504.0
+offset_bottom = 174.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Time" unique_id=282086727]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Time" unique_id=475913890]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "Space"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Time" unique_id=1221616763]
+layout_mode = 0
+offset_left = -60.000004
+offset_top = 0.6666663
+offset_right = 36.999996
+offset_bottom = 23.666666
+text = "Timing"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Cancel" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=226099680]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 195.0
+offset_right = 504.0
+offset_bottom = 219.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Cancel" unique_id=1372282571]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Cancel" unique_id=1159878794]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "C"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Cancel" unique_id=1404998476]
+layout_mode = 0
+offset_left = -60.66667
+offset_top = 0.6666663
+offset_right = -3.6666718
+offset_bottom = 23.666666
+text = "Cancel"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Menu" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=3066942]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 240.0
+offset_right = 504.0
+offset_bottom = 264.0
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel/Keybinds/Menu" unique_id=285958800]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 24.0
+texture = ExtResource("17_8gukh")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Key" type="Label" parent="CanvasLayer/Panel/Keybinds/Menu" unique_id=1755848012]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 27.0
+text = "Esc"
+label_settings = SubResource("LabelSettings_duqhi")
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Panel/Keybinds/Menu" unique_id=890324175]
+layout_mode = 0
+offset_left = -49.33334
+offset_top = 0.6666663
+offset_right = -8.33334
+offset_bottom = 23.666666
+text = "Menu"
+label_settings = SubResource("LabelSettings_tjmo3")
+
+[node name="Back" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=1697811633]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 300.0
+offset_right = 447.0
+offset_bottom = 332.0
+texture_normal = ExtResource("13_ow1yt")
+texture_pressed = ExtResource("14_o2t6a")
+texture_hover = ExtResource("15_8gukh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Keybinds/Back" unique_id=184071477]
+layout_mode = 0
+offset_left = 27.99999
+offset_top = 6.999995
+offset_right = 67.99999
+offset_bottom = 18.999996
+text = "Back"
+label_settings = SubResource("LabelSettings_8wcgx")
+horizontal_alignment = 1
+
+[node name="Reset" type="TextureButton" parent="CanvasLayer/Panel/Keybinds" unique_id=1733831564]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 300.0
+offset_right = 314.0
+offset_bottom = 332.0
+texture_normal = ExtResource("13_ow1yt")
+texture_pressed = ExtResource("14_o2t6a")
+texture_hover = ExtResource("15_8gukh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Keybinds/Reset" unique_id=1592950049]
+layout_mode = 0
+offset_left = 27.99999
+offset_top = 6.999995
+offset_right = 67.99999
+offset_bottom = 18.999996
+text = "Reset"
+label_settings = SubResource("LabelSettings_8wcgx")
+horizontal_alignment = 1
+
+[node name="Error" type="Label" parent="CanvasLayer/Panel/Keybinds" unique_id=1833799780]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 87.0
+offset_right = 390.0
+offset_bottom = 132.0
+text = "Error
+"
+label_settings = SubResource("LabelSettings_8gukh")
+horizontal_alignment = 1

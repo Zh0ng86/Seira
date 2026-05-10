@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://b7pd6ysfkx3el"]
+
+[ext_resource type="Script" uid="uid://bqk3erxkqb6g4" path="res://Scripts/attack.gd" id="1_ghqbj"]
+
+[resource]
+script = ExtResource("1_ghqbj")
+name = "axe_lightAtk"
+animation_name = "axe_light"
+metadata/_custom_type_script = "uid://bqk3erxkqb6g4"

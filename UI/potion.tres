@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://w2xuxx27t3i8"]
+
+[ext_resource type="Texture2D" uid="uid://cociqwspv7o8i" path="res://UI/flask_big_red.png" id="1_uncrq"]
+
+[resource]
+atlas = ExtResource("1_uncrq")
+region = Rect2(3, 3, 10, 11)

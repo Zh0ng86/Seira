@@ -5,9 +5,10 @@
 [resource]
 script = ExtResource("1_gsrk2")
 char_name = "Wizard"
-max_hp = 80
-hp = 80
-attack = 15
-precision = 6
-speed = 5
+level = 3
+attack = 20
+defense = 7
+precision = 8
+speed = 7
+passive = "Wizard has a 20% chance to attack alongside another character."
 metadata/_custom_type_script = "uid://ik5djf20v0iu"
