@@ -379,7 +379,7 @@ patch_margin_bottom = 32
 offset_left = 151.0
 offset_top = 30.0
 offset_right = 479.0
-offset_bottom = 330.0
+offset_bottom = 338.0
 texture = ExtResource("24_5kmqj")
 patch_margin_left = 32
 patch_margin_top = 32
@@ -558,43 +558,11 @@ layout_mode = 2
 text = "Attack: X"
 label_settings = SubResource("LabelSettings_ptuo3")
 
-[node name="Add" type="Label" parent="CanvasLayer/Exp/Stats/HBoxContainer/Atk" unique_id=401244713]
-layout_mode = 0
-offset_left = 90.0
-offset_top = -2.0
-offset_right = 106.0
-offset_bottom = 14.0
-text = "+"
-label_settings = SubResource("LabelSettings_2sop1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="CanvasLayer/Exp/Stats/HBoxContainer/Atk/Add" unique_id=176680238]
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-
 [node name="Def" type="Label" parent="CanvasLayer/Exp/Stats/HBoxContainer" unique_id=1141718035]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Defense: X"
 label_settings = SubResource("LabelSettings_ptuo3")
-
-[node name="Add" type="Label" parent="CanvasLayer/Exp/Stats/HBoxContainer/Def" unique_id=2132158297]
-layout_mode = 0
-offset_left = 90.0
-offset_top = -2.0
-offset_right = 106.0
-offset_bottom = 14.0
-text = "+"
-label_settings = SubResource("LabelSettings_2sop1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="CanvasLayer/Exp/Stats/HBoxContainer/Def/Add" unique_id=572124217]
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Exp/Stats" unique_id=1554322477]
 layout_mode = 2
@@ -606,54 +574,128 @@ layout_mode = 2
 text = "Precision: X"
 label_settings = SubResource("LabelSettings_ptuo3")
 
-[node name="Add" type="Label" parent="CanvasLayer/Exp/Stats/HBoxContainer2/Prc" unique_id=301273968]
-layout_mode = 0
-offset_left = 90.0
-offset_top = -2.0
-offset_right = 106.0
-offset_bottom = 14.0
-text = "+"
-label_settings = SubResource("LabelSettings_2sop1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="CanvasLayer/Exp/Stats/HBoxContainer2/Prc/Add" unique_id=768601593]
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-
 [node name="Spd" type="Label" parent="CanvasLayer/Exp/Stats/HBoxContainer2" unique_id=2030060683]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Speed: X"
 label_settings = SubResource("LabelSettings_ptuo3")
 
-[node name="Add" type="Label" parent="CanvasLayer/Exp/Stats/HBoxContainer2/Spd" unique_id=32816015]
+[node name="Info" type="Label" parent="CanvasLayer/Exp" unique_id=394194013]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 0
-offset_left = 90.0
-offset_top = -2.0
-offset_right = 106.0
-offset_bottom = 14.0
+offset_left = 104.0
+offset_top = 238.0
+offset_right = 224.0
+offset_bottom = 250.0
+text = "Leveled up "
+label_settings = SubResource("LabelSettings_ptuo3")
+horizontal_alignment = 1
+
+[node name="LvlUp" type="Control" parent="CanvasLayer/Exp" unique_id=1643452238]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AddBtn" type="Control" parent="CanvasLayer/Exp/LvlUp" unique_id=1441099331]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AtkAdd" type="Label" parent="CanvasLayer/Exp/LvlUp/AddBtn" unique_id=401244713]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 194.0
+offset_right = 170.0
+offset_bottom = 210.0
 text = "+"
 label_settings = SubResource("LabelSettings_2sop1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Exp/Stats/HBoxContainer2/Spd/Add" unique_id=158407272]
+[node name="Button" type="Button" parent="CanvasLayer/Exp/LvlUp/AddBtn/AtkAdd" unique_id=176680238]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="Allocate" type="Label" parent="CanvasLayer/Exp" unique_id=3365606]
+[node name="DefAdd" type="Label" parent="CanvasLayer/Exp/LvlUp/AddBtn" unique_id=2132158297]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 242.0
-offset_right = 234.0
-offset_bottom = 265.0
+offset_left = 285.0
+offset_top = 196.0
+offset_right = 301.0
+offset_bottom = 212.0
+text = "+"
+label_settings = SubResource("LabelSettings_2sop1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Exp/LvlUp/AddBtn/DefAdd" unique_id=572124217]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="PrcAdd" type="Label" parent="CanvasLayer/Exp/LvlUp/AddBtn" unique_id=301273968]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 217.0
+offset_right = 170.0
+offset_bottom = 233.0
+text = "+"
+label_settings = SubResource("LabelSettings_2sop1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Exp/LvlUp/AddBtn/PrcAdd" unique_id=768601593]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="SpdAdd" type="Label" parent="CanvasLayer/Exp/LvlUp/AddBtn" unique_id=32816015]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 218.0
+offset_right = 301.0
+offset_bottom = 234.0
+text = "+"
+label_settings = SubResource("LabelSettings_2sop1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Exp/LvlUp/AddBtn/SpdAdd" unique_id=158407272]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Continue" type="Label" parent="CanvasLayer/Exp/LvlUp" unique_id=1707952039]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 274.0
+offset_right = 187.0
+offset_bottom = 297.0
+text = "Continue"
+label_settings = SubResource("LabelSettings_mrqp6")
+
+[node name="Btn" type="TextureButton" parent="CanvasLayer/Exp/LvlUp/Continue" unique_id=148263332]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -7.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = 12.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("30_6ke21")
+texture_pressed = ExtResource("31_2sop1")
+texture_hover = ExtResource("32_dnb8m")
+
+[node name="Allocate" type="Label" parent="CanvasLayer/Exp/LvlUp" unique_id=3365606]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 274.0
+offset_right = 233.0
+offset_bottom = 297.0
 text = "Allocate"
 label_settings = SubResource("LabelSettings_mrqp6")
 
-[node name="Btn" type="TextureButton" parent="CanvasLayer/Exp/Allocate" unique_id=447165034]
+[node name="Btn" type="TextureButton" parent="CanvasLayer/Exp/LvlUp/Allocate" unique_id=447165034]
 show_behind_parent = true
 layout_mode = 0
 offset_left = -9.0
@@ -665,16 +707,16 @@ texture_normal = ExtResource("30_6ke21")
 texture_pressed = ExtResource("31_2sop1")
 texture_hover = ExtResource("32_dnb8m")
 
-[node name="Reset" type="Label" parent="CanvasLayer/Exp" unique_id=718234095]
+[node name="Reset" type="Label" parent="CanvasLayer/Exp/LvlUp" unique_id=718234095]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 242.0
-offset_right = 150.0
-offset_bottom = 265.0
+offset_left = 95.0
+offset_top = 274.0
+offset_right = 149.0
+offset_bottom = 297.0
 text = "Reset"
 label_settings = SubResource("LabelSettings_mrqp6")
 
-[node name="Btn" type="TextureButton" parent="CanvasLayer/Exp/Reset" unique_id=898690023]
+[node name="Btn" type="TextureButton" parent="CanvasLayer/Exp/LvlUp/Reset" unique_id=898690023]
 show_behind_parent = true
 layout_mode = 0
 offset_left = -17.0
@@ -686,24 +728,13 @@ texture_normal = ExtResource("30_6ke21")
 texture_pressed = ExtResource("31_2sop1")
 texture_hover = ExtResource("32_dnb8m")
 
-[node name="Info" type="Label" parent="CanvasLayer/Exp" unique_id=394194013]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 0
-offset_left = 105.0
-offset_top = 269.0
-offset_right = 225.0
-offset_bottom = 281.0
-text = "Leveled up "
-label_settings = SubResource("LabelSettings_ptuo3")
-horizontal_alignment = 1
-
 [node name="Error" type="Label" parent="CanvasLayer/Exp" unique_id=809675772]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 0
-offset_left = 105.0
-offset_top = 149.0
-offset_right = 225.0
-offset_bottom = 161.0
+offset_left = 104.0
+offset_top = 152.0
+offset_right = 224.0
+offset_bottom = 164.0
 text = "Leveled up "
 label_settings = SubResource("LabelSettings_6ke21")
 horizontal_alignment = 1

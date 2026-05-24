@@ -92,12 +92,12 @@ func start_battle(enemy_name: String):
 	_battle_loading = true
 	battle_enemy = enemy_name
 	can_move = false
+	battle_state = "loading"
 	
 	call_deferred("_do_start_battle")
 
-func on_battle_finished(total_exp: int) -> void:     
+func on_battle_finished() -> void:     
 	battle_state = "loading" 
-	
 	
 	_battle_scene.process_mode = Node.PROCESS_MODE_DISABLED
 	_battle_scene.visible = false
@@ -123,3 +123,5 @@ func _do_start_battle() -> void:
 	_battle_scene = load(GAME_SCENES["Battle"]).instantiate()
 	get_tree().root.add_child(_battle_scene)
 	get_tree().current_scene = _battle_scene
+	
+	battle_state = "idle"

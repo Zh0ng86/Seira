@@ -14,6 +14,9 @@ const CHAR_TEXTURE = {
 const ACTIVE_TEXTURE = preload("uid://d38lnyjfl57gx")
 const NONACTIVE_TEXTURE = preload("uid://uxditpn58uys")
 
+const POINTS_PER_LEVEL: int = 3
+const STAT_KEYS = ["atk", "def", "prc", "spd"]
+
 @onready var turn_system : Node2D = $TurnSystem
 @onready var timing_ring : Node2D = $TimingRing
 @onready var fx_manager : Node2D = $FXManager
@@ -33,6 +36,7 @@ const NONACTIVE_TEXTURE = preload("uid://uxditpn58uys")
 @onready var exp_rect : NinePatchRect = $CanvasLayer/Exp
 @onready var stats_rect1 : HBoxContainer = $CanvasLayer/Exp/Stats/HBoxContainer
 @onready var stats_rect2 : HBoxContainer = $CanvasLayer/Exp/Stats/HBoxContainer2
+@onready var lvlUp_node : Control = $CanvasLayer/Exp/LvlUp
 
 var party_nodes : Array
 var char_spawn_points : Array
@@ -41,10 +45,11 @@ var active_enemy : int = 0
 var enemy_spawn_points : Array
 var all_combatants : Array = []
 var lvlUp_status : Array[bool] = []
-var stats_inc : Array[Dictionary] = []
+var pending_stats: Array[Dictionary] = []
 
 var ORDER_NUM : int = 5
 var total_exp : int = 0
+var is_win : bool = false
 
 signal player_attack_done
 
@@ -65,10 +70,23 @@ func _ready() -> void:
 	call_deferred("_setup_fx")
 	
 	#Stat increase btn
-	
+	var hbox = lvlUp_node.get_node("AddBtn")
+	hbox.get_child(0).get_node("Button").pressed.connect(func(): add_pending_stat(GameManager.active_index, "atk"))
+	hbox.get_child(1).get_node("Button").pressed.connect(func(): add_pending_stat(GameManager.active_index, "def"))
+	hbox.get_child(2).get_node("Button").pressed.connect(func(): add_pending_stat(GameManager.active_index, "prc"))
+	hbox.get_child(3).get_node("Button").pressed.connect(func(): add_pending_stat(GameManager.active_index, "spd"))
+
+	# Reset and Allocate buttons (already in the scene as Btn children)
+	lvlUp_node.get_node("Reset/Btn").pressed.connect(func(): reset_pending_stats(GameManager.active_index))
+	lvlUp_node.get_node("Allocate/Btn").pressed.connect(_on_allocate_pressed)
+	lvlUp_node.get_node("Continue/Btn").pressed.connect(_end_battle)
 	
 	refresh_turn_order_ui()
 	update_ui()
+
+func _process(delta: float) -> void:
+	if enemies.size() <= 0 and GameManager.battle_state != "battle_conclusion": 
+		on_enemies_dead()
 
 func _input(event):
 	if  Input.is_key_pressed(KEY_P): 
@@ -97,7 +115,8 @@ func _input(event):
 		GameManager.prev_hero()
 		if GameManager.battle_state == "battle_conclusion":
 			exp_toggle()
-	if event.is_action_pressed("toggle"):
+			
+	if event.is_action_pressed("toggle") and enemies.size() > 1:
 		next_enemy()
 	
 	if event.is_action_pressed("l atk"):
@@ -109,11 +128,92 @@ func _input(event):
 
 	update_ui()
 
+func _on_allocate_pressed() -> void:
+	if pending_stats.is_empty():
+		return
+	commit_pending_stats(GameManager.active_index)
+	refresh_stat_ui()
+
+func init_pending_stats() -> void:
+	pending_stats.clear()
+	for i in range(GameManager.party_stats.size()):
+		var points = POINTS_PER_LEVEL if lvlUp_status[i] else 0
+		pending_stats.append({ "atk": 0, "def": 0, "prc": 0, "spd": 0, "pool": points })
+
+func add_pending_stat(char_idx: int, stat: String) -> void:
+	var p = pending_stats[char_idx]
+	if p["pool"] <= 0:
+		return
+	p[stat] += 1
+	p["pool"] -= 1
+	refresh_stat_ui()
+
+func reset_pending_stats(char_idx: int) -> void:
+	var p = pending_stats[char_idx]
+	for s in STAT_KEYS:
+		p["pool"] += p[s]
+		p[s] = 0
+	refresh_stat_ui()
+
+func commit_pending_stats(i: int) -> void:
+	var p = pending_stats[i]
+	if p["pool"] > 0: 
+		return
+		
+	var stats = GameManager.party_stats[i]
+	stats.grow_stat("attack",    p["atk"])
+	stats.grow_stat("defense",   p["def"])
+	stats.grow_stat("precision", p["prc"])
+	stats.grow_stat("speed",     p["spd"])
+	pending_stats[i]["pool"] = 0
+	lvlUp_status[i] = false
+	
+	exp_toggle()
+
+func _end_battle(): 
+	if !lvlUp_status.has(true):
+		lvlUp_status.clear()
+		GameManager.on_battle_finished()
+	
+	var err = exp_rect.get_node("Error")
+	err.visible = true
+	err.text = "%s has leveled up!" % [GameManager.party_stats[lvlUp_status.find(true)].char_name]
+
+func refresh_stat_ui() -> void:
+	var char_idx = GameManager.active_index
+	var char_stats = GameManager.party_stats[char_idx]
+	var p = pending_stats[char_idx]
+	
+	if lvlUp_status[char_idx]:
+		stats_rect1.get_child(0).text = "Attack:%d (%d)"    % [char_stats.attack,    p["atk"]]
+		stats_rect1.get_child(1).text = "Defense:%d (%d)"   % [char_stats.defense,   p["def"]]
+		stats_rect2.get_child(0).text = "Precision:%d (%d)" % [char_stats.precision, p["prc"]]
+		stats_rect2.get_child(1).text = "Speed:%d (%d)"     % [char_stats.speed,     p["spd"]]
+	else: 
+		stats_rect1.get_child(0).text = "Attack:%d "    % [char_stats.attack]
+		stats_rect1.get_child(1).text = "Defense:%d "   % [char_stats.defense]
+		stats_rect2.get_child(0).text = "Precision:%d " % [char_stats.precision]
+		stats_rect2.get_child(1).text = "Speed:%d "     % [char_stats.speed]
+
+	var info_label = exp_rect.get_node("Info")
+	if p["pool"] > 0:
+		info_label.text = "%d point(s) remaining" % p["pool"]
+	elif lvlUp_status[char_idx]:
+		info_label.text = "Ready to allocate!"
+	else:
+		info_label.text = "Gained: %dxp" % total_exp
+
 func on_enemies_dead(): 
+	enemies.clear()
+		
+	is_win = true
 	GameManager.battle_state = "battle_conclusion"
 	exp_gain()
+	init_pending_stats() 
 	exp_rect.visible = true
+	exp_rect.get_node("Error").visible = false
 	exp_toggle()
+	
 	fx_manager._exit_tree()
 	
 func heal():
@@ -299,6 +399,7 @@ func exp_gain():
 			party[i].exp -= party[i].exp_to_next_level()
 			party[i].level += 1
 			lvlUp_status.append(true)
+			print("Level up: " + party[i].char_name)
 		else: 
 			lvlUp_status.append(false)			
 
@@ -308,7 +409,9 @@ func exp_toggle():
 	var lvl_display = exp_rect.get_child(1)
 	var exp_display = exp_rect.get_child(2)
 	var hp_display = exp_rect.get_child(3)
-	var status_display = exp_rect.get_child(6)
+	
+	exp_rect.get_node("Error").visible = false
+	exp_rect.get_node("Error").text = ""
 	
 	#change the bar 
 	for i in range(0, exp_char_bar.get_children().size()):
@@ -333,12 +436,26 @@ func exp_toggle():
 	hp_progressbar.max_value = char.max_hp
 	hp_progressbar.value = char.hp
 	
-
-	status_display.text = "Gained: %d xp" % total_exp
+	var allocate_node = lvlUp_node.get_node("Allocate")
+	var reset_node = lvlUp_node.get_node("Reset")
+	var add_btns = lvlUp_node.get_node("AddBtn")
+	var continue_node = lvlUp_node.get_node("Continue")
+	
+	if(!lvlUp_status[GameManager.active_index]):
+		add_btns.visible = false
+		allocate_node.visible = false
+		reset_node.visible = false
+		continue_node.visible = true
+	else : 
+		add_btns.visible = true
+		allocate_node.visible = true
+		reset_node.visible = true
+		continue_node.visible = false
+	
+	refresh_stat_ui()
 
 func update_ui():
-	if enemies.size() <= 0 && !GameManager.can_move: 
-		on_enemies_dead()
+	if is_win: 
 		return
 	
 	var char_name = GameManager.get_active_char()
@@ -361,8 +478,9 @@ func update_ui():
 		var active_char_node = turn_system.active_combatant
 		char_highlight.position = active_char_node.position
 		char_highlight.position.y -= 25
-		var active_enemy_node = enemies[active_enemy]
-		enemy_highlight.position = active_enemy_node.global_position
+		if enemies[active_enemy]:
+			var active_enemy_node = enemies[active_enemy]
+			enemy_highlight.position = active_enemy_node.global_position
 
 func refresh_turn_order_ui() -> void:
 	# clear old slots
@@ -389,6 +507,10 @@ func remove_combatant(node: Node) -> void:
 	party_nodes.erase(node)
 	enemies.erase(node)
 	node.queue_free()
+	
+	if enemies.size() <= 0 && !GameManager.can_move: 
+		is_win = true
+		return
 	refresh_turn_order_ui()
 func spawn_characters():
 	for i in GameManager.party.size():

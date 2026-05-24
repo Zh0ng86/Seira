@@ -114,6 +114,10 @@ func _ready() -> void:
 	set_party()
 	toggle_stats()
 
+func _process(delta: float) -> void:
+	if GameManager.can_move: 
+		self.visible = true
+
 func _input(event): 
 	if is_keybinding:
 		if event is InputEventKey and event.pressed:
